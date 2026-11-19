@@ -26,14 +26,14 @@ landing/
 
 ## Seções
 
-1. **Hero** — slogan exato do briefing: *“Chega de GIF. Agora é AVIF.”*, CTA de compra (Hotmart),
+1. **Hero** — slogan exato do briefing: *“Chega de GIF. Agora é AVIF.”*, CTA de compra (Microsoft Store / Gumroad),
    screenshot do app e fatos rápidos (GPU, alpha, local).
 2. **Recursos** — sequência/vídeo, encode por GPU, transparência, controle fino, CLI+MCP, 100% local.
 3. **Como funciona** — 3 passos no desktop.
 4. **GIF × AVIF** — comparativo por critério (cores, transparência, tamanho, qualidade, suporte).
 5. **Para agentes de IA** — fluxo de 4 passos, tools MCP e blocos de código com botão copiar
    (`avifnim init`, `.mcp.json`, comando CLI).
-6. **Compra** — Hotmart (R$ 19,90), o que está incluído e o passo a passo.
+6. **Compra** — Microsoft Store (Windows) e Gumroad (macOS/Linux), US$ 9,90.
 7. **FAQ** — compatibilidade, GPU, privacidade, uso com Claude/OpenCode, vídeo, sobrescrita.
 8. **CTA final** + rodapé.
 
@@ -41,8 +41,6 @@ landing/
 
 - Menu mobile com `aria-expanded` e fechamento por Esc/clique fora.
 - Header ganha borda após o scroll.
-- Detecção de SO para trocar o rótulo do CTA (`Windows`, `Linux`, `macOS`).
-  - macOS aparece como “em breve” até o PKG ser publicado.
 - Botões “Copiar” nos blocos de código (Clipboard API + fallback `execCommand`).
 - Reveal on scroll com `IntersectionObserver` (respeita `prefers-reduced-motion`).
 - Link ativo no menu conforme a seção visível.
@@ -58,11 +56,11 @@ landing/
 
 ## Preço e checkout
 
-- **Português (Brasil):** R$ 19,90, pagamento único, via **Hotmart**.
-  - Link placeholder em `index.html`: `https://pay.hotmart.com/SEU_PRODUTO` (trocar pelo real).
-  - A seção `#comprar` mostra o que está incluído e o passo a passo da compra.
-- **Inglês (internacional):** US$ 9,90, com opção **Gumroad** e **itch.io** — página em inglês ainda
-  a ser criada (`avif-i18n`/landing EN). O texto e os links estão anotados no beads.
+- **Preço:** US$ 9,90, pagamento único, licença individual.
+- **Windows:** Microsoft Store (MSIX). Link placeholder em `index.html`
+  (`https://apps.microsoft.com/`); trocar pelo produto real.
+- **macOS/Linux:** Gumroad. Link placeholder (`https://gumroad.com/`); trocar pelo produto real.
+- A seção `#comprar` mostra o que está incluído e o passo a passo da compra.
 - O site **não linka mais o GitHub**: o produto é vendido como software fechado.
 
 ## Publicar
@@ -86,8 +84,7 @@ As tags `og:url`, `og:image`, `canonical` e o JSON-LD usam essa URL absoluta. Qu
 próprio existir, troque `https://everctba.github.io/avifnim-site` por `https://avifnim.com` nos
 quatro HTMLs.
 
-Ao publicar, troque também o link da Hotmart na seção `#comprar` e (quando existir) os links de
-Gumroad/itch.io na versão em inglês.
+Ao publicar, troque os links da Microsoft Store e do Gumroad na seção `#comprar`.
 
 ## Assets que ainda faltam (opcional)
 

@@ -1101,6 +1101,18 @@ details p {
    color: var(--muted);
 }
 
+.store-actions {
+   display: grid;
+   gap: 8px;
+   margin-top: 6px;
+}
+
+.store-actions .price-btn {
+   width: 100%;
+   align-self: stretch;
+   margin-top: 0;
+}
+
 .price-btn {
    align-self: flex-start;
    margin-top: 6px;
