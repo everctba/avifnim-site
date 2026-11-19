@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>AVIFnim — Licenças de terceiros</title>
+   <meta name="description" content="Licenças dos componentes de terceiros usados pelo AVIFnim: FFmpeg (GPL), libavif (BSD), Electron (MIT) e fontes.">
+   <meta name="theme-color" content="#0a0a0a">
+   <meta property="og:site_name" content="AVIFnim">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="AVIFnim — Licenças de terceiros">
+   <meta property="og:description"
+      content="Licenças dos componentes de terceiros usados pelo AVIFnim: FFmpeg (GPL), libavif (BSD), Electron (MIT) e fontes.">
+   <meta property="og:url" content="https://everctba.github.io/avifnim-site/licencas.html">
+   <meta property="og:image" content="https://everctba.github.io/avifnim-site/assets/og-avifnim.jpg">
+   <meta property="og:image:type" content="image/jpeg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:image:alt" content="AVIFnim — Licenças de terceiros">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="AVIFnim — Licenças de terceiros">
+   <meta name="twitter:description"
+      content="Licenças dos componentes de terceiros usados pelo AVIFnim: FFmpeg (GPL), libavif (BSD), Electron (MIT) e fontes.">
+   <meta name="twitter:image" content="https://everctba.github.io/avifnim-site/assets/og-avifnim.jpg">
+   <meta name="twitter:image:alt" content="AVIFnim — Licenças de terceiros">
+   <link rel="canonical" href="https://everctba.github.io/avifnim-site/licencas.html">
+   <link rel="icon" href="assets/favicon.ico" sizes="any">
+   <link rel="icon" href="assets/app-icon-512.png" type="image/png">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header class="site-header" id="top">
+      <div class="container header-inner">
+         <a class="brand" href="index.html" aria-label="AVIFnim">
+            <img src="assets/app-icon-512.png" alt="" width="28" height="28">
+            <span>AVIF<span class="accent">nim</span></span>
+         </a>
+         <span style="flex:1"></span>
+         <a class="btn btn-primary btn-sm" href="index.html">Voltar ao site</a>
+      </div>
+   </header>
+
+   <main class="container" style="max-width: 880px; padding: 56px 0 72px;" id="main">
+      <span class="eyebrow">Licenças</span>
+      <h1 style="margin: 10px 0 14px;">Licenças de terceiros</h1>
+      <p style="color: var(--muted); max-width: 62ch;">
+         O AVIFnim é um software proprietário, mas usa componentes de terceiros. Cada um mantém a própria
+         licença, e <strong>nada no contrato do AVIFnim restringe os direitos que você tem sobre eles</strong>.
+      </p>
+
+      <section style="margin-top: 40px;">
+         <h2 style="font-size: 20px;">FFmpeg — GPL</h2>
+         <p style="color: var(--muted);">
+            O AVIFnim <strong>executa o FFmpeg como programa separado</strong> (processo filho, via linha de comando),
+            sem linkar as bibliotecas ao aplicativo. O binário distribuído é GPL e o código-fonte correspondente
+            está disponível abaixo.
+         </p>
+         <ul style="color: var(--muted); line-height: 1.8;">
+            <li>
+               <strong>Windows:</strong> FFmpeg 7.1 (gyan.dev essentials) —
+               <a href="https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz" target="_blank" rel="noopener">fonte</a> +
+               <a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener">scripts de build</a>.
+            </li>
+            <li>
+               <strong>Linux:</strong> FFmpeg n8.1 (BtbN/FFmpeg-Builds GPL) —
+               <a href="https://github.com/BtbN/FFmpeg-Builds" target="_blank" rel="noopener">build</a> +
+               <a href="https://github.com/FFmpeg/FFmpeg/tree/n8.1" target="_blank" rel="noopener">fonte</a>.
+            </li>
+            <li>
+               <strong>macOS:</strong> FFmpeg 6.1.1 (eugeneware/ffmpeg-static b6.1.1) —
+               <a href="https://github.com/eugeneware/ffmpeg-static" target="_blank" rel="noopener">build</a> +
+               <a href="https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz" target="_blank" rel="noopener">fonte</a>.
+            </li>
+         </ul>
+         <p style="color: var(--muted);">
+            <strong>Oferta escrita (GPLv3):</strong> por 3 anos a partir do recebimento, o código-fonte
+            correspondente pode ser solicitado em
+            <a href="mailto:mayerdesigner@gmail.com">mayerdesigner@gmail.com</a>.
+            Texto da licença: <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank" rel="noopener">GPLv3</a>.
+         </p>
+      </section>
+
+      <section style="margin-top: 36px;">
+         <h2 style="font-size: 20px;">libavif / avifenc — BSD-2-Clause</h2>
+         <p style="color: var(--muted);">
+            Copyright 2019 Joe Drago. Licença BSD de 2 cláusulas: permite uso, modificação e distribuição,
+            inclusive comercial, desde que o aviso de copyright e o texto da licença sejam mantidos.
+            <a href="https://github.com/AOMediaCodec/libavif/blob/main/LICENSE" target="_blank" rel="noopener">Texto completo</a>.
+         </p>
+      </section>
+
+      <section style="margin-top: 36px;">
+         <h2 style="font-size: 20px;">Electron — MIT</h2>
+         <p style="color: var(--muted);">
+            Copyright (c) Electron contributors; Copyright (c) 2013-2020 GitHub Inc. Licença MIT: permite uso,
+            cópia, modificação e distribuição, inclusive comercial, mantendo o aviso de copyright e a licença.
+            O Electron inclui Chromium e outros componentes sob BSD-3-Clause.
+            <a href="https://github.com/electron/electron/blob/main/LICENSE" target="_blank" rel="noopener">Texto completo</a>.
+         </p>
+      </section>
+
+      <section style="margin-top: 36px;">
+         <h2 style="font-size: 20px;">Fontes</h2>
+         <ul style="color: var(--muted); line-height: 1.8;">
+            <li><strong>Inter</strong> — SIL Open Font License 1.1</li>
+            <li><strong>Space Grotesk</strong> — SIL Open Font License 1.1</li>
+            <li><strong>Material Icons</strong> — Apache License 2.0</li>
+         </ul>
+      </section>
+
+      <p style="margin-top: 44px; color: var(--muted-2); font-size: 12px;">
+         Última atualização: 13/11/2026. Os textos completos também estão no guia do aplicativo
+         (Ajuda → Licenças de terceiros).
+      </p>
+   </main>
+
+   <footer class="site-footer">
+      <div class="container footer-inner">
+         <div class="footer-brand">
+            <img src="assets/app-icon-512.png" alt="" width="24" height="24">
+            <span>AVIF<span class="accent">nim</span></span>
+         </div>
+         <p><span class="accent">AVIF animado</span>. Feito para a web moderna.</p>
+         <nav aria-label="Links do rodapé">
+            <a href="index.html">Site</a>
+            <a href="historia.html">História do GIF</a>
+            <a href="index.html#comprar">Comprar</a>
+         </nav>
+         <span class="copyright">© 2026 AVIFnim</span>
+      </div>
+   </footer>
+</body>
+</html>
