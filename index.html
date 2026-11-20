@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,9 +71,15 @@
    }
    </script>
    <noscript>
-      <style>.reveal { opacity: 1; transform: none; }</style>
+      <style>
+         .reveal {
+            opacity: 1;
+            transform: none;
+         }
+      </style>
    </noscript>
 </head>
+
 <body>
    <a class="skip-link" href="#main">Ir para o conteúdo</a>
 
@@ -91,6 +98,7 @@
             <a href="#tecnologia">Tecnologia</a>
             <a href="#agentes">Para agentes</a>
             <a href="#comparativo">GIF × AVIF</a>
+            <a href="viewer.html" class="nav-free">Viewer Free</a>
             <a href="#comprar">Comprar</a>
          </nav>
 
@@ -106,322 +114,296 @@
    </header>
 
    <main id="main">
-      <section class="hero">
-         <div class="container hero-grid">
-            <div class="hero-copy reveal">
-               <span class="eyebrow">Sequências e vídeos → AVIF animado</span>
-               <h1>Chega de GIF.<br><span class="accent">Agora é AVIF.</span></h1>
+      <div class="noise ">
+         <section class="hero  ">
+            <h1>Chega de GIF.<br><span class="accent">&nbspAgora é AVIF.</span></h1>
+            <div class="container hero-grid">
+               <div class="hero-copy reveal">
+                  <!-- <span class="eyebrow">Sequências e vídeos → AVIF animado</span> -->
 
-               <ul class="hero-points">
-                  <li>Maior qualidade de imagem e transparência de verdade</li>
-                  <li>Versão Desktop</li>
-                  <li>No terminal com <code>avifnim</code></li>
-                  <li>Pelo seu agente de IA via MCP</li>
-               </ul>
 
-               <div class="hero-actions">
-                  <a class="btn btn-primary btn-lg" id="hero-download" href="#comprar">
-                     Comprar agora · US$ 9,90
-                  </a>
+                  <ul class="hero-points">
+                     <li>Sequências e vídeos para AVIF animado</li>
+                     <li>Versão Desktop</li>
+                     <li>Grave a tela e transforme em AVIF animado</li>
+                     <li>Pelo seu agente de IA via MCP</li>
+                  </ul>
+
+                  <div class="hero-actions">
+                     <a class="btn btn-primary btn-lg" id="hero-download" href="#comprar">
+                        Comprar agora · US$ 9,90
+                     </a>
+                  </div>
+
+                  <p class="hero-price-note">Licença individual · Windows, macOS e Linux · pagamento único</p>
+
+                  <ul class="hero-facts">
+                     <li><strong>GPU AV1</strong> NVENC · AMF · QuickSync</li>
+
+                  </ul>
                </div>
 
-               <p class="hero-price-note">Licença individual · Windows, macOS e Linux · pagamento único</p>
-
-               <ul class="hero-facts">
-                  <li><strong>GPU AV1</strong> NVENC · AMF · QuickSync</li>
-                  <li><strong>Local</strong> nada é enviado para a nuvem</li>
-               </ul>
-            </div>
-
-            <figure class="hero-media reveal">
-               <div class="media-frame">
-                  <img src="assets/app-preview.png" width="1060" height="726"
-                     alt="Interface do AVIFnim com a área de seleção de imagens, pré-visualização de frames e opções de qualidade, FPS e velocidade.">
-               </div>
-               <figcaption>
+               <figure class="hero-media reveal">
+                  <div class="media-frame">
+                     <img src="img/animhero800.avif" width="1060" height="726"
+                        alt="Interface do AVIFnim com a área de seleção de imagens, pré-visualização de frames e opções de qualidade, FPS e velocidade.">
+                  </div>
+                  <!-- <figcaption>
                   <span class="dot"></span> Windows, macOS e Linux · fila de frames, GPU e transparência
-               </figcaption>
-            </figure>
-         </div>
-      </section>
-
-      <section class="os-banner" aria-label="Sistemas disponíveis">
-         <div class="container">
-            <div class="os-banner-inner reveal">
-               <p class="os-banner-title">Disponível para</p>
-               <ul class="os-list">
-                  <li class="os-item">
-                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M3 6.1l7.2-1V11H3V6.1zm8.2-1.2L21 3.6V11h-9.8V4.9zM3 12.2h7.2v5.9L3 17V12.2zm8.2 0H21v7.4l-9.8-1.3v-6.1z"></path>
-                     </svg>
-                     <span>Windows</span>
-                  </li>
-                  <li class="os-item">
-                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2.6c-2.6 0-4.4 2.3-4.4 5 0 1.1-.5 1.7-1.1 2.4-.6.8-.5 1.9.3 2.4.2 1.7 1 3.2 2.2 4.2.6 1.6.4 3.2 1.2 3.7.6.4 1.3.1 1.8-.2.5.3 1.2.6 1.8.2.8-.5.6-2.1 1.2-3.7 1.2-1 2-2.5 2.2-4.2.8-.5.9-1.6.3-2.4-.6-.7-1.1-1.3-1.1-2.4 0-2.7-1.8-5-4.4-5z"></path>
-                        <circle cx="9.9" cy="9.3" r="1.1" fill="#00226b"></circle>
-                        <circle cx="14.1" cy="9.3" r="1.1" fill="#00226b"></circle>
-                        <path d="M10.6 11.9l1.4 1 1.4-1" stroke="#00226b" stroke-width="1.1" fill="none" stroke-linecap="round"></path>
-                     </svg>
-                     <span>Linux</span>
-                  </li>
-                  <li class="os-item">
-                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M16.4 12.5c0-2 1.6-3 1.7-3.1-.9-1.4-2.4-1.6-2.9-1.6-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.8-2.7-.8-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 7.9.7 1 1.5 2.1 2.5 2 1-.1 1.4-.7 2.7-.7s1.6.7 2.7.7c1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.2-.8-2.2-2.9z"></path>
-                        <path d="M14.7 6.4c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z"></path>
-                     </svg>
-                     <span>macOS</span>
-                  </li>
-               </ul>
+               </figcaption> -->
+               </figure>
+               <div class="fundodegrade "> </div>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <section class="section" id="recursos">
-         <div class="container">
-            <header class="section-head reveal">
-               <span class="eyebrow">Recursos</span>
-               <h2>O que o AVIFnim faz</h2>
-               <p>Um motor só, três formas de usar: desktop, terminal e agentes de IA.</p>
-            </header>
-
-            <div class="cards">
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                        <path d="M3 15l4-4 4 4 4-5 6 6"></path>
-                        <circle cx="8" cy="9" r="1.2"></circle>
-                     </svg>
-                  </span>
-                  <h3>Sequência ou vídeo</h3>
-                  <p>PNG, JPG, WebP e GIF numerados — ou MP4, MKV, MOV, WEBM e AVI com corte de trecho e recorte
-                     antes de converter.</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-                        <path d="M7 10h4M7 14h6M15 10h2M15 14h2"></path>
-                     </svg>
-                  </span>
-                  <h3>Velocidade por GPU</h3>
-                  <p>AV1 por hardware em NVENC (NVIDIA), AMF (AMD) e QuickSync (Intel), com fallback automático
-                     para CPU (libaom) quando a GPU não suporta — sem configuração.</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <circle cx="12" cy="12" r="7"></circle>
-                        <path d="M12 3v18M3 12h18" opacity=".35"></path>
-                        <path d="M9 15l6-6"></path>
-                     </svg>
-                  </span>
-                  <h3>Transparência real</h3>
-                  <p>Sequências com alpha viram AVIF com canal de transparência via <code>avifenc</code>, sem
-                     fundo branco por acidente.</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <path d="M4 18V9M10 18V5M16 18v-6M22 18h-2"></path>
-                     </svg>
-                  </span>
-                  <h3>Controle fino</h3>
-                  <p>FPS de 0,3 a 60, escala 100/50/25%, presets de qualidade e velocidade, loop infinito e
-                     saída AVIF, WebP ou GIF.</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                        <path d="M7 9l3 3-3 3M12 15h5"></path>
-                     </svg>
-                  </span>
-                  <h3>CLI + MCP</h3>
-                  <p>O instalador coloca <code>avifnim</code> no PATH e sobe um servidor MCP em stdio para
-                     Claude, OpenCode, Cursor e outros agentes.</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"></path>
-                        <path d="M9 12l2 2 4-4"></path>
-                     </svg>
-                  </span>
-                  <h3>100% local</h3>
-                  <p>Conversão na sua máquina, sem upload. Você escolhe onde salvar — e o app nunca sobrescreve
-                     um arquivo existente por acidente.</p>
-               </article>
+         <section class="os-banner  " aria-label="Sistemas disponíveis">
+            <div class="container">
+               <div class="os-banner-inner reveal">
+                  <p class="os-banner-title">Disponível para</p>
+                  <ul class="os-list">
+                     <li class="os-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                           <path
+                              d="M3 6.1l7.2-1V11H3V6.1zm8.2-1.2L21 3.6V11h-9.8V4.9zM3 12.2h7.2v5.9L3 17V12.2zm8.2 0H21v7.4l-9.8-1.3v-6.1z">
+                           </path>
+                        </svg>
+                        <span>Windows</span>
+                     </li>
+                     <li class="os-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                           <path
+                              d="M12 2.6c-2.6 0-4.4 2.3-4.4 5 0 1.1-.5 1.7-1.1 2.4-.6.8-.5 1.9.3 2.4.2 1.7 1 3.2 2.2 4.2.6 1.6.4 3.2 1.2 3.7.6.4 1.3.1 1.8-.2.5.3 1.2.6 1.8.2.8-.5.6-2.1 1.2-3.7 1.2-1 2-2.5 2.2-4.2.8-.5.9-1.6.3-2.4-.6-.7-1.1-1.3-1.1-2.4 0-2.7-1.8-5-4.4-5z">
+                           </path>
+                           <circle cx="9.9" cy="9.3" r="1.1" fill="#00226b"></circle>
+                           <circle cx="14.1" cy="9.3" r="1.1" fill="#00226b"></circle>
+                           <path d="M10.6 11.9l1.4 1 1.4-1" stroke="#00226b" stroke-width="1.1" fill="none"
+                              stroke-linecap="round"></path>
+                        </svg>
+                        <span>Linux</span>
+                     </li>
+                     <li class="os-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                           <path
+                              d="M16.4 12.5c0-2 1.6-3 1.7-3.1-.9-1.4-2.4-1.6-2.9-1.6-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.8-2.7-.8-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 7.9.7 1 1.5 2.1 2.5 2 1-.1 1.4-.7 2.7-.7s1.6.7 2.7.7c1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.2-.8-2.2-2.9z">
+                           </path>
+                           <path
+                              d="M14.7 6.4c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z">
+                           </path>
+                        </svg>
+                        <span>macOS</span>
+                     </li>
+                  </ul>
+               </div>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <section class="section" id="casos-de-uso">
-         <div class="container">
-            <header class="section-head reveal">
-               <span class="eyebrow">Casos de uso</span>
-               <h2>Onde o AVIF animado brilha</h2>
-               <p>Três fluxos que ficam leves, rápidos e sem upload.</p>
-            </header>
+         <section class="section   " id="casos-de-uso">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Casos de uso</span>
+                  <h2>Onde o AVIF animado brilha</h2>
+                  <p>Três fluxos que ficam leves, rápidos e sem upload.</p>
+               </header>
 
-            <div class="use-cards">
-               <article class="use-card reveal">
-                  <!-- depois: background-image: url(".../meme.avif") no .use-visual -->
-                  <div class="use-visual use-visual--meme" aria-hidden="true">
-                     <span class="use-chip">Social</span>
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="9"></circle>
-                        <path d="M8.5 14.5c.9 1.2 2.1 1.8 3.5 1.8s2.6-.6 3.5-1.8"></path>
-                        <path d="M9 9.5h.01M15 9.5h.01" stroke-width="2.2" stroke-linecap="round"></path>
-                     </svg>
-                  </div>
-                  <div class="use-body">
-                     <span class="use-tag">Criadores</span>
-                     <h3>Memes que valem mais que 3 MB</h3>
-                     <p>Corte o vídeo, ajuste o FPS e exporte um loop leve — com transparência de verdade e sem o
-                        peso do GIF.</p>
-                  </div>
-               </article>
+               <div class="use-cards">
+                  <article class="use-card reveal">
+                     <!-- depois: background-image: url(".../meme.avif") no .use-visual -->
+                     <div class="use-visual use-visual--meme" aria-hidden="true">
+                        <!-- <span class="use-chip">Social</span> -->
 
-               <article class="use-card reveal">
-                  <!-- demo: gravação real (AVIF animado) como background do card -->
-                  <div class="use-visual use-visual--tutorial use-visual--media" aria-hidden="true"
-                     style="background-image: url('assets/instalar.avif')">
-                     <span class="use-chip">Tutoriais</span>
-                  </div>
-                  <div class="use-body">
-                     <span class="use-tag">Educadores</span>
-                     <h3>Grave e publique tutoriais</h3>
-                     <p>Grave a tela direto no app, corte o que não interessa e exporte em AVIF. Tudo local, sem
-                        upload e sem render farm.</p>
-                  </div>
-               </article>
+                     </div>
+                     <div class="use-body">
+                        <span class="use-tag">Criadores</span>
+                        <h3>Crie memes de maneira prática</h3>
+                        <p>Corte o vídeo, ajuste o FPS e exporte um loop leve, de maneira bem intuitiva e sem todo
+                           aquele
+                           peso
+                           do
+                           GIF.
+                        </p>
+                     </div>
+                  </article>
 
-               <article class="use-card reveal">
-                  <!-- depois: background-image: url(".../blender.avif") no .use-visual -->
-                  <div class="use-visual use-visual--blender" aria-hidden="true">
-                     <span class="use-chip">3D &amp; dev</span>
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path>
-                        <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path>
-                     </svg>
-                  </div>
-                  <div class="use-body">
-                     <span class="use-tag">Blender</span>
-                     <h3>Do Blender para a web</h3>
-                     <p>Renderize o loop em PNGs e converta a sequência em AVIF animado — pelo app, pelo CLI ou pelo
-                        seu agente via MCP.</p>
-                  </div>
-               </article>
-            </div>
+                  <article class="use-card reveal">
+                     <!-- demo: gravação real (AVIF animado) como background do card -->
+                     <div class="use-visual use-visual--tutorial use-visual--media" aria-hidden="true" class="use-chip">
+                     </div>
+                     <div class="use-body">
+                        <span class="use-tag">Educadores</span>
+                        <h3>Vídeo da tela para imagem AVIF</h3>
+                        <p>Grave a tela direto no app, corte o que não interessa e exporte em AVIF. Excelente para
+                           divulgar features em páginas web.</p>
+                     </div>
+                  </article>
 
-            <p class="use-footer reveal">
+                  <article class="use-card reveal">
+                     <!-- depois: background-image: url(".../blender.avif") no .use-visual -->
+                     <div class="use-visual use-visual--blender" aria-hidden="true">
+
+                     </div>
+                     <div class="use-body">
+                        <span class="use-tag">Sequência</span>
+                        <h3>Sequência PNG para AVIF</h3>
+                        <p>Renderize o loop em PNGs e converta a sequência em AVIF animado — pelo app, pelo CLI ou pelo
+                           seu agente via MCP.</p>
+                     </div>
+                  </article>
+               </div>
+
+               <!-- <p class="use-footer reveal">
                <a class="link-arrow" href="#comprar">Comprar por US$ 9,90 →</a>
-            </p>
-         </div>
-      </section>
+            </p> -->
+            </div>
+         </section>
 
-      <section class="section section-alt" id="como-funciona">
-         <div class="container">
-            <header class="section-head reveal">
-               <span class="eyebrow">Como funciona</span>
-               <h2>Três passos no desktop</h2>
-               <p>Arraste, ajuste, exporte. Sem conta, sem espera de upload.</p>
-            </header>
+         <section class="section   " id="recursos">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Recursos</span>
+                  <h2>O que o AVIFnim faz</h2>
+                  <p>Um motor só, três formas de usar: desktop, terminal e agentes de IA.</p>
+               </header>
 
-            <ol class="steps">
-               <li class="step reveal">
-                  <span class="step-number">01</span>
-                  <h3>Arraste as imagens</h3>
-                  <p>Selecione a sequência numerada ou um vídeo. O app detecta os frames automaticamente e monta
-                     a fila.</p>
-               </li>
-               <li class="step reveal">
-                  <span class="step-number">02</span>
-                  <h3>Ajuste na prévia</h3>
-                  <p>Defina FPS, qualidade, tamanho, recorte e loop. Para vídeo, corte o trecho e o
-                     enquadramento antes de converter.</p>
-               </li>
-               <li class="step reveal">
-                  <span class="step-number">03</span>
-                  <h3>Exporte em AVIF</h3>
-                  <p>Um clique gera o AVIF animado — com transparência quando o material tiver alpha — e salva
-                     onde você escolher.</p>
-               </li>
-            </ol>
-         </div>
-      </section>
+               <div class="cards">
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                           <path d="M3 15l4-4 4 4 4-5 6 6"></path>
+                           <circle cx="8" cy="9" r="1.2"></circle>
+                        </svg>
+                     </span>
+                     <h3>Sequência ou vídeo</h3>
+                     <p>PNG, JPG, WebP e GIF numerados — ou MP4, MKV, MOV, WEBM e AVI com corte de trecho e recorte
+                        antes de converter.</p>
+                  </article>
 
-      <section class="section" id="na-pratica">
-         <div class="container">
-            <header class="section-head reveal">
-               <span class="eyebrow">Na prática</span>
-               <h2>Do arquivo ao AVIF, sem sair do app</h2>
-               <p>Sequências, vídeos e gravações de tela no mesmo fluxo — com corte, recorte e três formatos
-                  de saída.</p>
-            </header>
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+                           <path d="M7 10h4M7 14h6M15 10h2M15 14h2"></path>
+                        </svg>
+                     </span>
+                     <h3>Velocidade por GPU</h3>
+                     <p>AV1 por hardware em NVENC (NVIDIA), AMF (AMD) e QuickSync (Intel), com fallback automático
+                        para CPU (libaom) quando a GPU não suporta — sem configuração.</p>
+                  </article>
 
-            <div class="showcase">
-               <article class="showcase-card showcase-wide reveal">
-                  <div class="shot" data-shot="sequencias">
-                     <img class="shot-img" src="assets/features/sequencias.png" alt="Sequência de imagens no AVIFnim" loading="lazy"
-                        onload="this.closest('.shot').classList.add('has-shot')"
-                        onerror="this.remove()">
-                     <div class="shot-empty">
-                        <span class="shot-icon" aria-hidden="true">
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <circle cx="12" cy="12" r="7"></circle>
+                           <path d="M12 3v18M3 12h18" opacity=".35"></path>
+                           <path d="M9 15l6-6"></path>
+                        </svg>
+                     </span>
+                     <h3>Transparência real</h3>
+                     <p>Sequências com alpha viram AVIF com canal de transparência via <code>avifenc</code>, sem
+                        fundo branco por acidente.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <path d="M4 18V9M10 18V5M16 18v-6M22 18h-2"></path>
+                        </svg>
+                     </span>
+                     <h3>Controle fino</h3>
+                     <p>FPS de 0,3 a 60, escala 100/50/25%, presets de qualidade e velocidade, loop infinito e
+                        saída AVIF, WebP ou GIF.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                           <path d="M7 9l3 3-3 3M12 15h5"></path>
+                        </svg>
+                     </span>
+                     <h3>CLI + MCP</h3>
+                     <p>O instalador coloca <code>avifnim</code> no PATH e sobe um servidor MCP em stdio para
+                        Claude, OpenCode, Cursor e outros agentes.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"></path>
+                           <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                     </span>
+                     <h3>100% local</h3>
+                     <p>Conversão na sua máquina, sem upload. Você escolhe onde salvar.</p>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <section class="section   " id="na-pratica">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Na prática</span>
+                  <h2>Do arquivo ao AVIF, sem sair do app</h2>
+                  <p>Sequências, vídeos e gravações de tela no mesmo fluxo — com corte, recorte e três formatos
+                     de saída.</p>
+               </header>
+
+               <div class="showcase">
+                  <article class="showcase-card showcase-wide reveal">
+                     <div class="shot-1" data-shot="sequencias">
+                        <img class="shot-img" src="assets/features/sequencias.png" alt="Sequência de imagens no AVIFnim"
+                           loading="lazy" onload="this.closest('.shot').classList.add('has-shot')"
+                           onerror="this.remove()">
+                        <div class="shot-empty">
+                           <!-- <span class="shot-icon" aria-hidden="true">
                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                               <rect x="7" y="3" width="14" height="14" rx="2"></rect>
                               <path d="M3 7v12a2 2 0 0 0 2 2h12"></path>
                               <path d="M10 8l4 2-4 2z"></path>
                            </svg>
-                        </span>
-                        <span class="shot-label">Imagem ilustrativa</span>
-                        <span class="shot-file">assets/features/sequencias.png</span>
+                        </span> -->
+                           <!-- <span class="shot-label">Imagem ilustrativa</span> -->
+                           <!-- <span class="shot-file">assets/features/sequencias.png</span> -->
+                        </div>
                      </div>
-                  </div>
-                  <div class="showcase-body">
-                     <h3>Sequências de imagens</h3>
-                     <p>PNG, JPG, WebP ou GIF numerados entram como frames. O app ordena, mostra a prévia e
-                        preserva a transparência.</p>
-                  </div>
-               </article>
+                     <div class="showcase-body">
+                        <h3>Sequências de imagens</h3>
+                        <p>PNG, JPG, WebP ou GIF numerados entram como frames. O app ordena, mostra a prévia e
+                           preserva a transparência.</p>
+                     </div>
+                  </article>
 
-               <article class="showcase-card showcase-wide reveal">
-                  <div class="shot" data-shot="videos">
-                     <img class="shot-img" src="assets/features/videos.png" alt="Vídeo importado no AVIFnim" loading="lazy"
-                        onload="this.closest('.shot').classList.add('has-shot')"
-                        onerror="this.remove()">
-                     <div class="shot-empty">
-                        <span class="shot-icon" aria-hidden="true">
+                  <article class="showcase-card showcase-wide reveal">
+                     <div class="shot-2" data-shot="videos">
+                        <img class="shot-img" src="assets/features/videos.png" alt="Vídeo importado no AVIFnim"
+                           loading="lazy" onload="this.closest('.shot').classList.add('has-shot')"
+                           onerror="this.remove()">
+                        <div class="shot-empty">
+                           <!-- <span class="shot-icon" aria-hidden="true">
                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                               <rect x="3" y="5" width="18" height="14" rx="2"></rect>
                               <path d="M10 9l5 3-5 3z"></path>
                            </svg>
                         </span>
                         <span class="shot-label">Imagem ilustrativa</span>
-                        <span class="shot-file">assets/features/videos.png</span>
+                        <span class="shot-file">assets/features/videos.png</span> -->
+                        </div>
                      </div>
-                  </div>
-                  <div class="showcase-body">
-                     <h3>Vídeos</h3>
-                     <p>MP4, MOV, MKV, WEBM e AVI. Importe o arquivo, escolha o trecho e converta sem abrir
-                        outro programa.</p>
-                  </div>
-               </article>
+                     <div class="showcase-body">
+                        <h3>Vídeos</h3>
+                        <p>MP4, MOV, MKV, WEBM e AVI. Importe o arquivo, escolha o trecho e converta sem abrir
+                           outro programa.</p>
+                     </div>
+                  </article>
 
-               <article class="showcase-card reveal">
-                  <div class="shot" data-shot="gravacao">
-                     <img class="shot-img" src="assets/features/gravacao.png" alt="Gravação de tela no AVIFnim" loading="lazy"
-                        onload="this.closest('.shot').classList.add('has-shot')"
-                        onerror="this.remove()">
-                     <div class="shot-empty">
-                        <span class="shot-icon" aria-hidden="true">
+                  <article class="showcase-card reveal">
+                     <div class="shot-3" data-shot="gravacao">
+                        <img class="shot-img" src="assets/features/gravacao.png" alt="Gravação de tela no AVIFnim"
+                           loading="lazy" onload="this.closest('.shot').classList.add('has-shot')"
+                           onerror="this.remove()">
+                        <div class="shot-empty">
+                           <!-- <span class="shot-icon" aria-hidden="true">
                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                               <rect x="3" y="4" width="18" height="13" rx="2"></rect>
                               <path d="M8 21h8M12 17v4"></path>
@@ -429,45 +411,45 @@
                            </svg>
                         </span>
                         <span class="shot-label">Imagem ilustrativa</span>
-                        <span class="shot-file">assets/features/gravacao.png</span>
+                        <span class="shot-file">assets/features/gravacao.png</span> -->
+                        </div>
                      </div>
-                  </div>
-                  <div class="showcase-body">
-                     <h3>Gravação de tela</h3>
-                     <p>Grave a tela com a câmera seguindo o cursor — pensada para tutoriais e documentação
-                        de processos.</p>
-                  </div>
-               </article>
+                     <div class="showcase-body">
+                        <h3>Gravação de tela</h3>
+                        <p>Grave a tela com a câmera seguindo o cursor — pensada para tutoriais e documentação
+                           de processos.</p>
+                     </div>
+                  </article>
 
-               <article class="showcase-card reveal">
-                  <div class="shot" data-shot="corte-recorte">
-                     <img class="shot-img" src="assets/features/corte-recorte.png" alt="Corte e recorte de vídeo no AVIFnim" loading="lazy"
-                        onload="this.closest('.shot').classList.add('has-shot')"
-                        onerror="this.remove()">
-                     <div class="shot-empty">
-                        <span class="shot-icon" aria-hidden="true">
+                  <article class="showcase-card reveal">
+                     <div class="shot-4" data-shot="corte-recorte">
+                        <img class="shot-img" src="assets/features/corte-recorte.png"
+                           alt="Corte e recorte de vídeo no AVIFnim" loading="lazy"
+                           onload="this.closest('.shot').classList.add('has-shot')" onerror="this.remove()">
+                        <div class="shot-empty">
+                           <!-- <span class="shot-icon" aria-hidden="true">
                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                               <path d="M6 2v14a2 2 0 0 0 2 2h14"></path>
                               <path d="M18 22V8a2 2 0 0 0-2-2H2"></path>
                            </svg>
                         </span>
                         <span class="shot-label">Imagem ilustrativa</span>
-                        <span class="shot-file">assets/features/corte-recorte.png</span>
+                        <span class="shot-file">assets/features/corte-recorte.png</span> -->
+                        </div>
                      </div>
-                  </div>
-                  <div class="showcase-body">
-                     <h3>Corte e recorte</h3>
-                     <p>Trim no trecho e crop no enquadramento, com prévia do resultado antes de exportar.</p>
-                  </div>
-               </article>
+                     <div class="showcase-body">
+                        <h3>Corte e recorte</h3>
+                        <p>Trim no trecho e crop no enquadramento, com prévia do resultado antes de exportar.</p>
+                     </div>
+                  </article>
 
-               <article class="showcase-card reveal">
-                  <div class="shot" data-shot="exportacao">
-                     <img class="shot-img" src="assets/features/exportacao.png" alt="Exportação em AVIF, WebP ou GIF no AVIFnim" loading="lazy"
-                        onload="this.closest('.shot').classList.add('has-shot')"
-                        onerror="this.remove()">
-                     <div class="shot-empty">
-                        <span class="shot-icon" aria-hidden="true">
+                  <article class="showcase-card reveal">
+                     <div class="shot-5" data-shot="exportacao">
+                        <img class="shot-img" src="assets/features/exportacao.png"
+                           alt="Exportação em AVIF, WebP ou GIF no AVIFnim" loading="lazy"
+                           onload="this.closest('.shot').classList.add('has-shot')" onerror="this.remove()">
+                        <div class="shot-empty">
+                           <!-- <span class="shot-icon" aria-hidden="true">
                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                               <path d="M12 15V3"></path>
                               <path d="M8 7l4-4 4 4"></path>
@@ -475,187 +457,220 @@
                            </svg>
                         </span>
                         <span class="shot-label">Imagem ilustrativa</span>
-                        <span class="shot-file">assets/features/exportacao.png</span>
+                        <span class="shot-file">assets/features/exportacao.png</span> -->
+                        </div>
                      </div>
-                  </div>
-                  <div class="showcase-body">
-                     <h3>AVIF, WebP ou GIF</h3>
-                     <p>Exporte o mesmo material nos três formatos: AVIF para o site, WebP para
-                        compatibilidade e GIF quando for inevitável.</p>
-                  </div>
-               </article>
-            </div>
-         </div>
-      </section>
-
-      <section class="section" id="tecnologia">
-         <div class="container">
-            <header class="section-head reveal">
-               <span class="eyebrow">Tecnologia</span>
-               <h2>Velocidade de GPU, com fallback automático</h2>
-               <p>O AVIFnim usa o encoder AV1 por hardware quando disponível. Se a GPU não suportar AV1, ele cai
-                  para a CPU automaticamente — sem configuração.</p>
-            </header>
-
-            <div class="cards cards-four">
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <rect x="7" y="7" width="10" height="10" rx="2"></rect>
-                        <path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"></path>
-                     </svg>
-                  </span>
-                  <h3>NVENC · NVIDIA</h3>
-                  <p>Encode AV1 por hardware nas GPUs NVIDIA compatíveis (RTX 40 em diante).</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <rect x="4" y="4" width="16" height="16" rx="3"></rect>
-                        <path d="M8 9h8M8 12h5M8 15h8"></path>
-                     </svg>
-                  </span>
-                  <h3>AMF · AMD</h3>
-                  <p>Encoder AV1 por hardware nas Radeon com AMF compatível (RX 7000 em diante).</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"></path>
-                     </svg>
-                  </span>
-                  <h3>QuickSync · Intel</h3>
-                  <p>Aceleração AV1 por hardware em Intel Arc e iGPUs com QuickSync compatível.</p>
-               </article>
-
-               <article class="card reveal">
-                  <span class="card-icon" aria-hidden="true">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                        <rect x="6" y="6" width="12" height="12" rx="2"></rect>
-                        <path d="M10 10h4v4h-4z"></path>
-                     </svg>
-                  </span>
-                  <h3>CPU · libaom</h3>
-                  <p>Fallback automático quando não há GPU AV1. Usa todos os núcleos e funciona em qualquer máquina
-                     — mais lento que a GPU, mas sem configuração.</p>
-               </article>
-            </div>
-
-            <p class="tech-note reveal">
-               AV1 é livre de royalties (AOMedia). O motor usa FFmpeg (GPL), libavif (BSD-2-Clause) e
-               Electron (MIT). <a href="licencas.html">Licenças de terceiros</a>.
-            </p>
-         </div>
-      </section>
-
-      <section class="section" id="comparativo">
-         <div class="container compare-grid">
-            <div class="compare-copy reveal">
-               <span class="eyebrow">GIF × AVIF</span>
-               <h2>O mesmo loop, sem as limitações do GIF</h2>
-               <p>
-                  GIF tem 256 cores, transparência limitada e arquivos grandes. AVIF animado usa AV1, aceita
-                  milhões de cores, transparência real e costuma gerar arquivos bem menores na mesma
-                  qualidade.
-               </p>
-               <p class="muted">
-                  Navegadores modernos como Chrome, Edge, Firefox e Safari recentes já dão suporte a AVIF.
-               </p>
-               <a class="link-arrow" href="#comprar">Comprar e experimentar →</a>
-               <a class="link-arrow" href="historia.html">Ler a história do GIF →</a>
-            </div>
-
-            <div class="compare-table-wrap reveal">
-               <table class="compare-table">
-                  <thead>
-                     <tr>
-                        <th scope="col">Critério</th>
-                        <th scope="col">GIF</th>
-                        <th scope="col" class="highlight">AVIF animado</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <th scope="row">Cores</th>
-                        <td>256</td>
-                        <td class="highlight">Milhões</td>
-                     </tr>
-                     <tr>
-                        <th scope="row">Transparência</th>
-                        <td>1 bit (sem suavização)</td>
-                        <td class="highlight">Canal alpha</td>
-                     </tr>
-                     <tr>
-                        <th scope="row">Tamanho</th>
-                        <td>Grande</td>
-                        <td class="highlight">Menor na mesma qualidade</td>
-                     </tr>
-                     <tr>
-                        <th scope="row">Qualidade</th>
-                        <td>Serrilhado e banding</td>
-                        <td class="highlight">Suave, com gradientes</td>
-                     </tr>
-                     <tr>
-                        <th scope="row">Suporte</th>
-                        <td>Universal</td>
-                        <td class="highlight">Navegadores modernos</td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
-         </div>
-      </section>
-
-      <section class="section section-ai" id="agentes">
-         <div class="container ai-grid">
-            <div class="ai-copy reveal">
-               <span class="eyebrow">Para agentes de IA</span>
-               <h2>Seu agente converte e já usa no HTML</h2>
-               <p>
-                  Além do app, o AVIFnim instala um <strong>CLI</strong> e um <strong>servidor MCP</strong> no
-                  PATH. O agente (Claude, OpenCode, Cursor…) renderiza os PNGs, chama a conversão e recebe o
-                  caminho final para inserir no site — sem você abrir o app.
-               </p>
-
-               <ol class="ai-steps">
-                  <li><span>1</span> Peça a animação ao agente.</li>
-                  <li><span>2</span> Ele renderiza a sequência de PNGs.</li>
-                  <li><span>3</span> O MCP converte e sugere o destino.</li>
-                  <li><span>4</span> O agente usa o AVIF no HTML.</li>
-               </ol>
-
-               <div class="tools">
-                  <span class="tools-label">Tools expostas</span>
-                  <ul>
-                     <li><code>avif_from_sequence</code></li>
-                     <li><code>avif_from_video</code></li>
-                     <li><code>avif_inspect_sequence</code></li>
-                     <li><code>avif_suggest_output</code></li>
-                     <li><code>avif_capabilities</code></li>
-                  </ul>
+                     <div class="showcase-body">
+                        <h3>AVIF, WebP ou GIF</h3>
+                        <p>Exporte o mesmo material nos três formatos: AVIF para o site, WebP para
+                           compatibilidade e GIF quando for inevitável.</p>
+                     </div>
+                  </article>
                </div>
             </div>
+         </section>
 
-            <div class="ai-code reveal">
-               <div class="code-block">
-                  <div class="code-head">
-                     <span>Configura o projeto para o agente</span>
-                     <button class="copy-btn" type="button" data-copy="#code-init">Copiar</button>
+
+         <section class="section section-alt   " id="como-funciona">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Como funciona</span>
+                  <h2>Três passos no desktop</h2>
+                  <p>Arraste, ajuste, exporte. Sem conta, sem espera de upload.</p>
+               </header>
+
+               <ol class="steps">
+                  <li class="step reveal">
+                     <span class="step-number">01</span>
+                     <h3>Arraste as imagens</h3>
+                     <p>Selecione a sequência numerada ou um vídeo. O app detecta os frames automaticamente e monta
+                        a fila.</p>
+                  </li>
+                  <li class="step reveal">
+                     <span class="step-number">02</span>
+                     <h3>Ajuste na prévia</h3>
+                     <p>Defina FPS, qualidade, tamanho, recorte e loop. Para vídeo, corte o trecho e o
+                        enquadramento antes de converter.</p>
+                  </li>
+                  <li class="step reveal">
+                     <span class="step-number">03</span>
+                     <h3>Exporte em AVIF</h3>
+                     <p>Um clique gera o AVIF animado — com transparência quando o material tiver alpha — e salva
+                        onde você escolher.</p>
+                  </li>
+               </ol>
+            </div>
+         </section>
+
+
+         <section class="section  " id="tecnologia">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Tecnologia</span>
+                  <h2>Velocidade de GPU</h2>
+                  <p>O AVIFnim usa o encoder AV1 por hardware quando disponível. Se a GPU não suportar AV1, ele cai
+                     para a CPU automaticamente, sem configuração.</p>
+               </header>
+
+               <div class="cards cards-four">
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="7" y="7" width="10" height="10" rx="2"></rect>
+                           <path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"></path>
+                        </svg>
+                     </span>
+                     <h3>NVENC · NVIDIA</h3>
+                     <p>Encode AV1 por hardware nas GPUs NVIDIA compatíveis (RTX 40 em diante).</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+                           <path d="M8 9h8M8 12h5M8 15h8"></path>
+                        </svg>
+                     </span>
+                     <h3>AMF · AMD</h3>
+                     <p>Encoder AV1 por hardware nas Radeon com AMF compatível (RX 7000 em diante).</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"></path>
+                        </svg>
+                     </span>
+                     <h3>QuickSync · Intel</h3>
+                     <p>Aceleração AV1 por hardware em Intel Arc e iGPUs com QuickSync compatível.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+                           <path d="M10 10h4v4h-4z"></path>
+                        </svg>
+                     </span>
+                     <h3>CPU · libaom</h3>
+                     <p>Fallback automático quando não há GPU AV1. Usa todos os núcleos e funciona em qualquer máquina
+                        — mais lento que a GPU, mas sem configuração.</p>
+                  </article>
+               </div>
+
+               <p class="tech-note reveal">
+                  AV1 é livre de royalties (AOMedia). O motor usa FFmpeg (GPL), libavif (BSD-2-Clause) e
+                  Electron (MIT). <a href="licencas.html">Licenças de terceiros</a>.
+               </p>
+            </div>
+         </section>
+
+         <section class="section  " id="comparativo">
+            <div class="container compare-grid">
+               <div class="compare-copy reveal">
+                  <span class="eyebrow">GIF × AVIF</span>
+                  <h2>O mesmo loop, sem as limitações do GIF</h2>
+                  <p>
+                     GIF tem 256 cores, transparência limitada e arquivos grandes. AVIF animado usa AV1, aceita
+                     milhões de cores, transparência real e costuma gerar arquivos bem menores na mesma
+                     qualidade.
+                  </p>
+                  <p class="muted">
+                     Navegadores modernos como Chrome, Edge, Firefox e Safari recentes já dão suporte a AVIF.
+                  </p>
+                  <!-- <a class="link-arrow" href="#comprar">Comprar e experimentar →</a> -->
+                  <a class="link-arrow" href="historia.html">Ler a história do GIF →</a>
+               </div>
+
+               <div class="compare-table-wrap reveal">
+                  <table class="compare-table">
+                     <thead>
+                        <tr>
+                           <th scope="col">Critério</th>
+                           <th scope="col">GIF</th>
+                           <th scope="col" class="highlight">AVIF animado</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Cores</th>
+                           <td>256</td>
+                           <td class="highlight">Milhões</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Transparência</th>
+                           <td>1 bit (sem suavização)</td>
+                           <td class="highlight">Canal alpha</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Tamanho</th>
+                           <td>Grande</td>
+                           <td class="highlight">Menor na mesma qualidade</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Qualidade</th>
+                           <td>Serrilhado e banding</td>
+                           <td class="highlight">Suave, com gradientes</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Suporte</th>
+                           <td>Universal</td>
+                           <td class="highlight">Navegadores modernos</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </section>
+
+         <section class="section section-ai  " id="agentes">
+            <div class="container ai-grid">
+               <div class="ai-copy reveal">
+                  <span class="eyebrow">Para agentes de IA</span>
+                  <h2>Seu agente converte e já usa no HTML</h2>
+                  <p>
+                     O AVIFnim instala um <strong>CLI</strong> e um <strong>servidor MCP</strong> no
+                     PATH. O agente AI usa a sequência de PNGs na conversão do AVIF e insere no seu site, sem precisar
+                     abrir o app.
+                  </p>
+
+                  <ol class="ai-steps">
+                     <!-- <li><span>1</span> Peça a animação ao agente.</li> -->
+                     <li><span>1</span> AVIFnim renderiza a sequência de PNGs.</li>
+                     <li><span>2</span> O MCP converte e sugere o destino.</li>
+                     <li><span>3</span> O agente usa o AVIF no HTML.</li>
+                  </ol>
+
+                  <div class="tools">
+                     <span class="tools-label">Informe as Tools ao agente</span>
+                     <ul>
+                        <li><code>Diz ao agente: “existe um servidor chamado avifnim, execute avifnim mcp”</code></li>
+                        <!-- <li><code>avif_from_video</code></li>
+                        <li><code>avif_inspect_sequence</code></li>
+                        <li><code>avif_suggest_output</code></li>
+                        <li><code>avif_capabilities</code></li> -->
+                     </ul>
                   </div>
-                  <pre id="code-init"><code>avifnim init --write \
+               </div>
+
+               <div class="ai-code reveal">
+                  <div class="code-block">
+                     <div class="code-head">
+                        <span>Configura o projeto para o agente</span>
+                        <button class="copy-btn" type="button" data-copy="#code-init">Copiar</button>
+                     </div>
+                     <pre id="code-init"><code>avifnim init --write \
   --input "C:\projeto\render" \
   --output "C:\projeto\public\img\hero.avif" \
   --type sequence</code></pre>
-               </div>
-
-               <div class="code-block">
-                  <div class="code-head">
-                     <span>Registra o servidor MCP (.mcp.json)</span>
-                     <button class="copy-btn" type="button" data-copy="#code-mcp">Copiar</button>
                   </div>
-                  <pre id="code-mcp"><code>{
+
+                  <div class="code-block">
+                     <div class="code-head">
+                        <span>Registra o servidor MCP (.mcp.json)</span>
+                        <button class="copy-btn" type="button" data-copy="#code-mcp">Copiar</button>
+                     </div>
+                     <pre id="code-mcp"><code>{
   "mcpServers": {
     "avifnim": {
       "command": "avifnim",
@@ -663,151 +678,270 @@
     }
   }
 }</code></pre>
-               </div>
-
-               <div class="code-block">
-                  <div class="code-head">
-                     <span>Ou direto no terminal</span>
-                     <button class="copy-btn" type="button" data-copy="#code-cli">Copiar</button>
                   </div>
-                  <pre id="code-cli"><code>avifnim convert ".\render" \
+
+                  <!-- <div class="code-block">
+                     <div class="code-head">
+                        <span>Ou direto no terminal</span>
+                        <button class="copy-btn" type="button" data-copy="#code-cli">Copiar</button>
+                     </div>
+                     <pre id="code-cli"><code>avifnim convert ".\render" \
   --out ".\site\img\hero.avif" \
   --fps 24 --quality levisio --json</code></pre>
+                  </div> -->
                </div>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <section class="section" id="comprar">
-         <div class="container">
-            <header class="section-head reveal">
-               <span class="eyebrow">Preço</span>
-               <h2>Um preço, tudo incluído</h2>
-               <p>Licença individual do AVIFnim para Windows, macOS e Linux: desktop, CLI e servidor MCP em um único instalador.</p>
-            </header>
+         <section class="section" id="comprar">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Preço</span>
+                  <h2>Um preço, tudo incluído</h2>
+                  <p>Licença individual do AVIFnim para Windows, macOS e Linux: desktop, CLI e servidor MCP em um único
+                     instalador.</p>
+               </header>
 
-            <div class="purchase-grid">
-               <article class="price-card reveal">
-                  <span class="os-badge">Licença individual</span>
-                  <div class="price">
-                     <span class="currency">US$</span>
-                     <strong>9,90</strong>
-                     <span class="period">pagamento único</span>
+               <div class="price-grid">
+                  <article class="price-card reveal">
+                     <div class="price-platform">
+                        <span class="price-icon" aria-hidden="true">
+                           <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M16.4 12.5c0-2 1.6-3 1.7-3.1-.9-1.4-2.4-1.6-2.9-1.6-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.8-2.7-.8-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 7.9.7 1 1.5 2.1 2.5 2 1-.1 1.4-.7 2.7-.7s1.6.7 2.7.7c1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.2-.8-2.2-2.9z"></path>
+                              <path d="M14.7 6.4c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z"></path>
+                           </svg>
+                        </span>
+                        <div>
+                           <h3>macOS 11+</h3>
+                           <span>Intel + Apple Silicon</span>
+                        </div>
+                     </div>
+
+                     <span class="os-badge">Gumroad</span>
+
+                     <div class="price">
+                        <span class="currency">US$</span>
+                        <strong>9,90</strong>
+                        <span class="period">pagamento único</span>
+                     </div>
+
+                     <p class="price-description">
+                        Instalador <code>.pkg</code> para Intel e Apple Silicon. Licença individual.
+                     </p>
+
+                     <ul class="includes">
+                        <li>App desktop + CLI/MCP</li>
+                        <li>AVIF com transparência e vídeo com trim/crop</li>
+                        <li>Licença para uma pessoa</li>
+                     </ul>
+
+                     <!-- TODO: trocar pelo link real do produto no Gumroad -->
+                     <a class="btn btn-primary btn-lg price-btn" href="https://gumroad.com/" target="_blank"
+                        rel="noopener">Comprar no Gumroad</a>
+                     <span class="download-note">macOS e Linux pelo Gumroad.</span>
+                  </article>
+
+                  <article class="price-card price-card--featured reveal">
+                     <div class="price-platform">
+                        <span class="price-icon" aria-hidden="true">
+                           <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M3 6.1l7.2-1V11H3V6.1zm8.2-1.2L21 3.6V11h-9.8V4.9zM3 12.2h7.2v5.9L3 17V12.2zm8.2 0H21v7.4l-9.8-1.3v-6.1z"></path>
+                           </svg>
+                        </span>
+                        <div>
+                           <h3>Windows 10/11</h3>
+                           <span>64-bit</span>
+                        </div>
+                     </div>
+
+                     <span class="os-badge">Microsoft Store</span>
+
+                     <div class="price">
+                        <span class="currency">US$</span>
+                        <strong>9,90</strong>
+                        <span class="period">pagamento único</span>
+                     </div>
+
+                     <p class="price-description">
+                        Instalador MSIX pela Microsoft Store. Licença individual.
+                     </p>
+
+                     <ul class="includes">
+                        <li>App desktop + CLI/MCP</li>
+                        <li>Atualizações pela Microsoft Store</li>
+                        <li>Licença para uma pessoa</li>
+                     </ul>
+
+                     <!-- TODO: trocar pelo link real do produto na Microsoft Store -->
+                     <a class="btn btn-primary btn-lg price-btn" href="https://apps.microsoft.com/" target="_blank"
+                        rel="noopener">Comprar na Microsoft Store</a>
+                     <span class="download-note">Windows pela Microsoft Store.</span>
+                  </article>
+
+                  <article class="price-card reveal">
+                     <div class="price-platform">
+                        <span class="price-icon" aria-hidden="true">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                              <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                              <path d="M7 9l3 3-3 3M12 15h5"></path>
+                           </svg>
+                        </span>
+                        <div>
+                           <h3>Linux</h3>
+                           <span>64-bit</span>
+                        </div>
+                     </div>
+
+                     <span class="os-badge">Gumroad</span>
+
+                     <div class="price">
+                        <span class="currency">US$</span>
+                        <strong>9,90</strong>
+                        <span class="period">pagamento único</span>
+                     </div>
+
+                     <p class="price-description">
+                        Pacote <code>.deb</code> e AppImage. Licença individual.
+                     </p>
+
+                     <ul class="includes">
+                        <li>App desktop + CLI/MCP</li>
+                        <li>AVIF com transparência e vídeo com trim/crop</li>
+                        <li>Licença para uma pessoa</li>
+                     </ul>
+
+                     <!-- TODO: trocar pelo link real do produto no Gumroad -->
+                     <a class="btn btn-primary btn-lg price-btn" href="https://gumroad.com/" target="_blank"
+                        rel="noopener">Comprar no Gumroad</a>
+                     <span class="download-note">macOS e Linux pelo Gumroad.</span>
+                  </article>
+               </div>
+
+               <div class="price-notes">
+                  <div class="price-note-item reveal">
+                     <span class="price-note-icon" aria-hidden="true">✓</span>
+                     <div>
+                        <strong>Pague uma vez</strong>
+                        <p>US$ 9,90, sem assinatura.</p>
+                     </div>
                   </div>
-                  <p class="price-description">
-                     O mesmo app para Windows, macOS e Linux — com CLI e servidor MCP.
-                  </p>
-
-                  <!-- TODO: trocar pelos links reais das lojas -->
-                  <div class="store-actions">
-                     <a class="btn btn-primary btn-lg price-btn" href="https://apps.microsoft.com/"
-                        target="_blank" rel="noopener">Comprar na Microsoft Store</a>
-                     <a class="btn btn-ghost btn-lg price-btn" href="https://gumroad.com/"
-                        target="_blank" rel="noopener">Comprar no Gumroad</a>
+                  <div class="price-note-item reveal">
+                     <span class="price-note-icon" aria-hidden="true">✓</span>
+                     <div>
+                        <strong>Instale e use</strong>
+                        <p>App desktop. O CLI/MCP é opcional na instalação.</p>
+                     </div>
                   </div>
-                  <span class="download-note">Windows pela Microsoft Store · macOS e Linux pelo Gumroad.</span>
-                  <span class="download-note">Preço de referência em USD; a loja cobra na moeda local.</span>
-                  <span class="download-note">Ao comprar ou baixar, você concorda com o <a
-                        href="eula.html">EULA</a>.</span>
+               </div>
 
-                  <ul class="includes">
-                     <li>Desktop para Windows, macOS e Linux</li>
-                     <li>CLI <code>avifnim</code> + servidor MCP</li>
-                     <li>AVIF com transparência e vídeo com trim/crop</li>
-                     <li>Licença para uma pessoa</li>
-                  </ul>
-               </article>
-
-               <aside class="purchase-info reveal">
-                  <h3>Como funciona</h3>
-                  <ol class="purchase-steps">
-                     <li>
-                        <span>1</span>
-                        <div>
-                           <strong>Escolha a loja</strong>
-                           <p>Windows na Microsoft Store; macOS e Linux no Gumroad.</p>
-                        </div>
-                     </li>
-                     <li>
-                        <span>2</span>
-                        <div>
-                           <strong>Pague uma vez</strong>
-                           <p>US$ 9,90, sem assinatura. A loja cobra na moeda local.</p>
-                        </div>
-                     </li>
-                     <li>
-                        <span>3</span>
-                        <div>
-                           <strong>Instale e use</strong>
-                           <p>Windows, macOS ou Linux. O CLI/MCP é opcional na instalação.</p>
-                        </div>
-                     </li>
-                  </ol>
-
-                  <p class="purchase-note">
-                     Já comprou? Acesse sua
-                     <a href="https://apps.microsoft.com/library" target="_blank" rel="noopener">biblioteca da Microsoft Store</a>
-                     ou a <a href="https://gumroad.com/library" target="_blank" rel="noopener">biblioteca do Gumroad</a>.
-                  </p>
-               </aside>
+               <p class="price-legal">Preço de referência em USD; a loja cobra na moeda local. Ao comprar ou baixar,
+                  você concorda com o <a href="eula.html">EULA</a>.</p>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <section class="section section-alt" id="faq">
-         <div class="container faq-wrap">
-            <header class="section-head reveal">
-               <span class="eyebrow">FAQ</span>
-               <h2>Perguntas frequentes</h2>
-            </header>
+         <section class="section section-alt   " id="faq">
+            <div class="container faq-wrap">
+               <header class="section-head reveal">
+                  <span class="eyebrow">FAQ</span>
+                  <h2>Perguntas frequentes</h2>
+               </header>
 
-            <div class="faq-list reveal">
-               <details>
-                  <summary>AVIF animado funciona em qualquer navegador?</summary>
-                  <p>Funciona nos navegadores modernos (Chrome, Edge, Firefox e Safari recentes). Não é
-                     universal como o GIF: se o seu público usa navegadores antigos, teste antes ou ofereça uma
-                     alternativa.</p>
-               </details>
-               <details>
-                  <summary>Preciso de placa de vídeo?</summary>
-                  <p>Não. Com GPU compatível o encode usa NVENC, AMF ou QuickSync; sem GPU o app cai
-                     automaticamente para CPU (libaom-av1).</p>
-               </details>
-               <details>
-                  <summary>Meus arquivos são enviados para algum servidor?</summary>
-                  <p>Não. Tudo roda na sua máquina, inclusive no CLI e no MCP. Nenhum arquivo sai do
-                     computador.</p>
-               </details>
-               <details>
-                  <summary>Como uso com Claude, OpenCode ou Cursor?</summary>
-                  <p>Instale o componente <strong>CLI + MCP</strong>, rode <code>avifnim init</code> no projeto e
-                     cole o bloco gerado no <code>AGENTS.md</code>, <code>CLAUDE.md</code> ou
-                     <code>rules.md</code>. O agente passa a chamar as tools de conversão.</p>
-               </details>
-               <details>
-                  <summary>Consigo converter vídeo, não só imagens?</summary>
-                  <p>Sim: MP4, MKV, MOV, WEBM e AVI, com corte de trecho, recorte de enquadramento, FPS e
-                     escala antes de virar AVIF (ou WebP/GIF animado).</p>
-               </details>
-               <details>
-                  <summary>O app sobrescreve meus arquivos?</summary>
-                  <p>Não por padrão. Se a saída já existir, ele cria <code>nome-2.avif</code>,
-                     <code>nome-3.avif</code>…</p>
-               </details>
+               <div class="faq-list reveal">
+                  <details>
+                     <summary>O AVIFnim é assinatura?</summary>
+                     <p>Não. É uma licença única de <strong>US$ 9,90</strong>, paga uma vez, sem renovação. A
+                        Microsoft Store cobra na moeda local; no Gumroad, em USD. Você tem licença permanente para a
+                        versão adquirida; correções da linha 1.x são publicadas quando disponíveis — sem
+                        mensalidade.</p>
+                  </details>
+                  <details>
+                     <summary>Preciso de placa de vídeo?</summary>
+                     <p>Não. Com GPU compatível, o encode usa NVENC (NVIDIA), AMF (AMD) ou QuickSync (Intel); sem
+                        GPU, cai automaticamente para CPU (libaom). O foco da GPU é <strong>velocidade</strong>; o
+                        tamanho depende do formato, da qualidade e do modo “GPU: arquivo menor”.</p>
+                  </details>
+                  <details>
+                     <summary>Meus arquivos são enviados para algum lugar?</summary>
+                     <p>Não. Tudo roda localmente — app, CLI e MCP. Sem upload, sem conta e sem telemetria. Depois
+                        de instalar, você pode usar offline.</p>
+                  </details>
+                  <details>
+                     <summary>Funciona no meu sistema?</summary>
+                     <p>Windows 10/11 64-bit pela <strong>Microsoft Store</strong>; macOS (Intel e Apple Silicon) e
+                        Linux x64 (<code>.deb</code>/AppImage) pelo <strong>Gumroad</strong>. O app, o CLI e o
+                        servidor MCP vêm juntos.</p>
+                  </details>
+                  <details>
+                     <summary>Só quero visualizar AVIF. Preciso comprar?</summary>
+                     <p>Não. O <strong>AVIFnim Viewer</strong> é grátis e open source (MIT) para abrir AVIF, WebP,
+                        GIF e PPM/PNM. O AVIFnim pago é para <strong>criar e converter</strong> sequências, vídeos e
+                        gravações de tela. Comece pelo Viewer; se precisar criar, a licença é única.</p>
+                  </details>
+                  <details>
+                     <summary>O que está incluído na licença?</summary>
+                     <p>App desktop + CLI <code>avifnim</code> + servidor MCP, para Windows, macOS e Linux. Licença
+                        para <strong>1 pessoa e 1 computador</strong> fora da Store; <strong>uso comercial
+                           permitido</strong>. Na Microsoft Store, valem os limites de dispositivo da conta.</p>
+                  </details>
+                  <details>
+                     <summary>Consigo converter vídeo e gravação de tela?</summary>
+                     <p>Sim: MP4, MKV, MOV, WEBM e AVI, com trim e crop; gravação de tela com câmera que segue o
+                        cursor; exporta AVIF, WebP ou GIF. Para vídeos longos, o foco é loops e trechos — teste o seu
+                        caso.</p>
+                  </details>
+                  <details>
+                     <summary>E se eu não gostar? Tem reembolso?</summary>
+                     <p>No Gumroad, <strong>30 dias</strong> (padrão); na Microsoft Store, vale a política da loja;
+                        consumidores têm o CDC (7 dias). Se algo não funcionar, fale com a gente por e-mail —
+                        suporte em melhor esforço, sem SLA.</p>
+                  </details>
+                  <details>
+                     <summary>Vou receber atualizações?</summary>
+                     <p>Correções da linha 1.x são publicadas quando disponíveis; a Microsoft Store pode entregá-las
+                        automaticamente. A versão 2.0 é uma licença separada. Não há assinatura nem cobrança
+                        recorrente.</p>
+                  </details>
+                  <details>
+                     <summary>O código é aberto?</summary>
+                     <p>O <strong>AVIFnim Viewer</strong> é open source (MIT). O <strong>AVIFnim</strong> conversor
+                        é proprietário, distribuído como binário. As licenças de terceiros (FFmpeg GPL, libavif BSD,
+                        Electron MIT) estão em Ajuda → Licenças e no site.</p>
+                  </details>
+                  <details>
+                     <summary>Funciona com Claude, OpenCode ou Cursor?</summary>
+                     <p>Sim. O instalador inclui o CLI e um servidor MCP. Rode <code>avifnim init</code> no projeto e
+                        cole o bloco no <code>AGENTS.md</code>/<code>CLAUDE.md</code>; o agente passa a converter e
+                        devolver o caminho final.</p>
+                  </details>
+                  <details>
+                     <summary>O app sobrescreve meus arquivos? Onde salva?</summary>
+                     <p>Não sobrescreve: se o nome existir, cria <code>nome-2.avif</code>, <code>nome-3.avif</code>.
+                        O padrão é <code>Desktop/AVIFnim</code>; você pode escolher a pasta na exportação.</p>
+                  </details>
+               </div>
+
+               <div class="faq-cta reveal">
+                  <p><strong>Ainda em dúvida?</strong> Teste o Viewer grátis ou veja o preço — sem assinatura e sem
+                     cadastro.</p>
+                  <div class="hero-actions">
+                     <a class="btn btn-ghost" href="viewer.html">Baixar o Viewer grátis</a>
+                     <a class="btn btn-primary" href="#comprar">Ver o AVIFnim · US$ 9,90</a>
+                  </div>
+               </div>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <section class="cta-final">
-         <div class="container cta-final-inner reveal">
-            <h2>Pronto para aposentar o GIF?</h2>
-            <p>Compre o AVIFnim e converta seu próximo loop em AVIF animado.</p>
-            <div class="hero-actions">
-               <a class="btn btn-primary btn-lg" id="final-download" href="#comprar">Comprar agora · US$ 9,90</a>
+         <section class="cta-final   ">
+            <div class="container cta-final-inner reveal">
+               <h2>Pronto para aposentar o GIF?</h2>
+               <p>Compre o AVIFnim e converta seu próximo loop em AVIF animado.</p>
+               <div class="hero-actions">
+                  <a class="btn btn-primary btn-lg" id="final-download" href="#comprar">Comprar agora · US$ 9,90</a>
+               </div>
+               <p class="cta-legal">Ao comprar ou baixar, você concorda com o <a href="eula.html">EULA</a>.</p>
             </div>
-            <p class="cta-legal">Ao comprar ou baixar, você concorda com o <a href="eula.html">EULA</a>.</p>
-         </div>
-      </section>
+         </section>
+      </div>
    </main>
 
    <footer class="site-footer">
@@ -828,6 +962,7 @@
          <nav aria-label="Links do rodapé">
             <a href="historia.html">História do GIF</a>
             <a href="eula.html">EULA</a>
+            <a href="viewer.html">Viewer Free</a>
             <a href="#comprar">Comprar</a>
             <a href="#top">Voltar ao topo</a>
          </nav>
@@ -837,4 +972,5 @@
 
    <script src="script.js"></script>
 </body>
+
 </html>

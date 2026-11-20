@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>AVIFnim Viewer — visualizador gratuito de imagens animadas</title>
+   <meta name="description"
+      content="Abra, navegue e reproduza AVIF, WebP e GIF animados no Windows, Linux e macOS. Grátis, open source (MIT), sem cadastro e sem telemetria.">
+   <meta name="theme-color" content="#0a0a0a">
+   <meta property="og:site_name" content="AVIFnim">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="AVIFnim Viewer — visualizador gratuito de imagens animadas">
+   <meta property="og:description"
+      content="AVIF, WebP e GIF animados no Windows, Linux e macOS. Leve, rápido, open source e sem telemetria.">
+   <meta property="og:url" content="https://everctba.github.io/avifnim-site/viewer.html">
+   <meta property="og:image" content="https://everctba.github.io/avifnim-site/assets/og-avifnim.jpg">
+   <meta property="og:image:type" content="image/jpeg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+   <meta property="og:image:alt" content="AVIFnim Viewer — visualizador gratuito de imagens animadas">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="AVIFnim Viewer — visualizador gratuito de imagens animadas">
+   <meta name="twitter:description"
+      content="AVIF, WebP e GIF animados no Windows, Linux e macOS. Leve, rápido, open source e sem telemetria.">
+   <meta name="twitter:image" content="https://everctba.github.io/avifnim-site/assets/og-avifnim.jpg">
+   <meta name="twitter:image:alt" content="AVIFnim Viewer — visualizador gratuito de imagens animadas">
+   <link rel="canonical" href="https://everctba.github.io/avifnim-site/viewer.html">
+   <link rel="icon" href="assets/favicon.ico" sizes="any">
+   <link rel="icon" href="assets/app-icon-512.png" type="image/png">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="viewer.css">
+   <script type="application/ld+json">
+   {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AVIFnim Viewer",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, Linux, macOS",
+      "softwareVersion": "0.1",
+      "description": "Visualizador gratuito e open source de AVIF, WebP e GIF animados, com navegação de pasta, zoom e tema claro/escuro.",
+      "url": "https://everctba.github.io/avifnim-site/viewer.html",
+      "image": "https://everctba.github.io/avifnim-site/assets/og-avifnim.jpg",
+      "downloadUrl": "https://github.com/everctba/AVIFnim-Viewer/releases/latest",
+      "license": "https://github.com/everctba/AVIFnim-Viewer/blob/master/LICENSE",
+      "isAccessibleForFree": true,
+      "inLanguage": "pt-BR",
+      "offers": {
+         "@type": "Offer",
+         "price": "0",
+         "priceCurrency": "USD",
+         "availability": "https://schema.org/InStock",
+         "url": "https://github.com/everctba/AVIFnim-Viewer/releases/latest"
+      },
+      "featureList": [
+         "AVIF animado com fallback nativo em Rust",
+         "WebP e GIF animados",
+         "Sequências numeradas de PNG/JPG",
+         "Navegação de pasta com prefetch",
+         "Zoom, pan, fit, 100% e tela cheia",
+         "Tema claro/escuro e PT-BR/EN"
+      ]
+   }
+   </script>
+   <noscript>
+      <style>
+         .reveal {
+            opacity: 1;
+            transform: none;
+         }
+      </style>
+   </noscript>
+</head>
+
+<body>
+   <a class="skip-link" href="#main">Ir para o conteúdo</a>
+
+   <header class="site-header" id="top">
+      <div class="container header-inner">
+         <a class="brand" href="index.html" aria-label="AVIFnim">
+            <img src="assets/app-icon-512.png" alt="" width="28" height="28">
+            <span>AVIF<span class="accent">nim</span></span>
+         </a>
+
+         <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+            <a href="index.html#recursos">Recursos</a>
+            <a href="index.html#como-funciona">Como funciona</a>
+            <a href="index.html#tecnologia">Tecnologia</a>
+            <a href="index.html#comparativo">GIF × AVIF</a>
+            <a href="index.html#comprar">Comprar</a>
+            <a href="viewer.html" class="nav-free" aria-current="page">Viewer Free</a>
+         </nav>
+
+         <a class="btn btn-primary btn-sm header-cta" href="index.html#comprar">
+            Comprar agora
+         </a>
+
+         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+         </button>
+      </div>
+   </header>
+
+   <main id="main">
+      <div class="noise">
+         <section class="hero viewer-hero">
+            <div class="container viewer-hero-inner reveal">
+               <img class="viewer-icon" src="assets/app-icon-512.png" alt="" width="64" height="64">
+               <span class="eyebrow">Visualizador gratuito e open source</span>
+               <h1>Seus AVIF, WebP e GIF animados<br><span class="accent">merecem um lugar melhor.</span></h1>
+               <p class="viewer-lead">
+                  Abra, navegue e reproduza imagens animadas no Windows, Linux e macOS. Leve, rápido, com tema
+                  claro e escuro — e sem telemetria.
+               </p>
+
+               <div class="hero-actions">
+                  <a class="btn btn-primary btn-lg" href="https://github.com/everctba/AVIFnim-Viewer/releases/latest"
+                     target="_blank" rel="noopener">Baixar grátis</a>
+                  <a class="btn btn-ghost btn-lg" href="https://github.com/everctba/AVIFnim-Viewer"
+                     target="_blank" rel="noopener">Ver no GitHub</a>
+               </div>
+
+               <p class="viewer-microcopy">Grátis para sempre · Licença MIT · Sem cadastro · Sem nuvem · Sem
+                  telemetria</p>
+               <span class="viewer-badge">v0.1.x · Windows · Linux · macOS</span>
+            </div>
+         </section>
+
+         <section class="section" id="plataformas">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Plataformas</span>
+                  <h2>Escolha sua plataforma</h2>
+                  <p>O mesmo visualizador, leve e gratuito, para o seu sistema.</p>
+               </header>
+
+               <div class="platform-grid">
+                  <article class="platform-card reveal">
+                     <div class="platform-head">
+                        <span class="platform-icon" aria-hidden="true">
+                           <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M3 6.1l7.2-1V11H3V6.1zm8.2-1.2L21 3.6V11h-9.8V4.9zM3 12.2h7.2v5.9L3 17V12.2zm8.2 0H21v7.4l-9.8-1.3v-6.1z"></path>
+                           </svg>
+                        </span>
+                        <div>
+                           <h3>Windows 10/11</h3>
+                           <span>64-bit</span>
+                        </div>
+                     </div>
+                     <ul>
+                        <li>Instalador <code>.exe</code> (NSIS)</li>
+                        <li>Versão <strong>portátil</strong> (não instala, não cria atalhos)</li>
+                        <li>Associações de arquivo <strong>opcionais</strong></li>
+                     </ul>
+                     <a class="btn btn-primary" href="https://github.com/everctba/AVIFnim-Viewer/releases/latest"
+                        target="_blank" rel="noopener">Baixar para Windows</a>
+                  </article>
+
+                  <article class="platform-card reveal">
+                     <div class="platform-head">
+                        <span class="platform-icon" aria-hidden="true">
+                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                              <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                              <path d="M7 9l3 3-3 3M12 15h5"></path>
+                           </svg>
+                        </span>
+                        <div>
+                           <h3>Linux</h3>
+                           <span>64-bit</span>
+                        </div>
+                     </div>
+                     <ul>
+                        <li>Pacote <code>.deb</code> para Ubuntu 22.04+, Linux Mint e derivados</li>
+                        <li>Integração com o menu <strong>“Abrir com”</strong></li>
+                        <li>Atalho na área de trabalho criado automaticamente na instalação</li>
+                     </ul>
+                     <a class="btn btn-primary" href="https://github.com/everctba/AVIFnim-Viewer/releases/latest"
+                        target="_blank" rel="noopener">Baixar .deb</a>
+                  </article>
+
+                  <article class="platform-card reveal">
+                     <div class="platform-head">
+                        <span class="platform-icon" aria-hidden="true">
+                           <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M16.4 12.5c0-2 1.6-3 1.7-3.1-.9-1.4-2.4-1.6-2.9-1.6-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.8-2.7-.8-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 7.9.7 1 1.5 2.1 2.5 2 1-.1 1.4-.7 2.7-.7s1.6.7 2.7.7c1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.2-.8-2.2-2.9z"></path>
+                              <path d="M14.7 6.4c.6-.7 1-1.7.9-2.6-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5 1 .1 1.9-.5 2.5-1.2z"></path>
+                           </svg>
+                        </span>
+                        <div>
+                           <h3>macOS 13+</h3>
+                           <span>Intel + Apple Silicon</span>
+                        </div>
+                     </div>
+                     <ul>
+                        <li><code>.dmg</code> universal</li>
+                        <li>Arraste para <strong>Applications</strong></li>
+                        <li>Associações via sistema (“Abrir com”)</li>
+                     </ul>
+                     <a class="btn btn-primary" href="https://github.com/everctba/AVIFnim-Viewer/releases/latest"
+                        target="_blank" rel="noopener">Baixar para macOS</a>
+                  </article>
+               </div>
+
+               <p class="viewer-note">Todos os downloads são gratuitos. Sem conta, sem limite de uso e sem anúncios.</p>
+            </div>
+         </section>
+
+         <section class="section section-alt" id="por-que">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Por que o AVIFnim Viewer?</span>
+                  <h2>Um visualizador que resolve o que os outros ignoram.</h2>
+               </header>
+
+               <div class="cards">
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <circle cx="12" cy="12" r="9"></circle>
+                           <path d="M10 8l6 4-6 4z"></path>
+                        </svg>
+                     </span>
+                     <h3>AVIF animado de verdade</h3>
+                     <p>Quadros na ordem certa, loop contínuo e fallback nativo quando o WebView do sistema não
+                        decodifica AVIF. Funciona no Windows, Linux e macOS.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <rect x="7" y="3" width="14" height="14" rx="2"></rect>
+                           <path d="M3 7v12a2 2 0 0 0 2 2h12"></path>
+                        </svg>
+                     </span>
+                     <h3>WebP, GIF e sequências</h3>
+                     <p>Além de AVIF e WebP animados, toca GIF e sequências numeradas de PNG/JPG na pasta — com
+                        velocidade de 30 ou 60 fps e pílula <strong>Auto play</strong> para ligar/desligar quando
+                        quiser.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <path d="M5 12h14M9 8l-4 4 4 4M15 8l4 4-4 4"></path>
+                        </svg>
+                     </span>
+                     <h3>Navegação de pasta de verdade</h3>
+                     <p>Setas ←/→, ordenação natural (<code>frame_2</code> antes de <code>frame_10</code>) e
+                        prefetch dos arquivos vizinhos para trocar de imagem sem travar.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"></path>
+                        </svg>
+                     </span>
+                     <h3>Do tamanho da sua tela</h3>
+                     <p>Zoom, pan, Fit, 100%, tela cheia (F11) e checkerboard para transparência. Duplo clique
+                        alterna entre Fit e 100%.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <circle cx="12" cy="12" r="4"></circle>
+                           <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"></path>
+                        </svg>
+                     </span>
+                     <h3>Claro, escuro e em dois idiomas</h3>
+                     <p>Interface inteira em <strong>português (BR)</strong> ou <strong>inglês</strong>, com tema
+                        claro ou escuro.</p>
+                  </article>
+
+                  <article class="card reveal">
+                     <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                           <path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z"></path>
+                           <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                     </span>
+                     <h3>Privacidade por padrão</h3>
+                     <p>Seus arquivos não saem do computador. Sem contas, sem nuvem, sem telemetria.</p>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <section class="section" id="como-funciona">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Como funciona</span>
+                  <h2>Abrir, navegar, deixar rodar.</h2>
+               </header>
+
+               <ol class="steps">
+                  <li class="step reveal">
+                     <span class="step-number">01</span>
+                     <h3>Baixe</h3>
+                     <p>Baixe para sua plataforma e abra o AVIFnim Viewer.</p>
+                  </li>
+                  <li class="step reveal">
+                     <span class="step-number">02</span>
+                     <h3>Arraste</h3>
+                     <p>Arraste uma imagem para a janela ou use <code>Ctrl+O</code> para abrir um arquivo.</p>
+                  </li>
+                  <li class="step reveal">
+                     <span class="step-number">03</span>
+                     <h3>Navegue</h3>
+                     <p>Navegue pela pasta com as setas e deixe o loop tocar. Simples assim.</p>
+                  </li>
+               </ol>
+            </div>
+         </section>
+
+         <section class="section section-alt" id="gratis">
+            <div class="container viewer-free">
+               <div class="viewer-free-copy reveal">
+                  <span class="eyebrow">Grátis, de verdade</span>
+                  <h2>R$ 0. Sem letras miúdas.</h2>
+                  <p>O visualizador é gratuito de verdade: não é trial, não expira e não tem anúncios.</p>
+                  <div class="hero-actions">
+                     <a class="btn btn-primary btn-lg" href="https://github.com/everctba/AVIFnim-Viewer/releases/latest"
+                        target="_blank" rel="noopener">Baixar grátis agora</a>
+                  </div>
+               </div>
+
+               <ul class="viewer-free-list reveal">
+                  <li>Download gratuito para Windows, Linux e macOS</li>
+                  <li>Código aberto sob licença MIT — auditável e para sempre seu</li>
+                  <li>Sem cadastro, sem assinatura e sem anúncios</li>
+                  <li>Sem telemetria: nada de enviar seus arquivos ou hábitos para servidor nenhum</li>
+                  <li>Sem limite de uso: abra quantas imagens quiser</li>
+               </ul>
+            </div>
+         </section>
+
+         <section class="section" id="para-quem">
+            <div class="container">
+               <header class="section-head reveal">
+                  <span class="eyebrow">Feito para quem trabalha com imagem</span>
+                  <h2>Para GIFs, WebP, AVIF e sequências do dia a dia.</h2>
+               </header>
+
+               <div class="cards cards-four">
+                  <article class="card reveal">
+                     <h3>Criadores</h3>
+                     <p>Recebem AVIF animado e precisam conferir frame a frame.</p>
+                  </article>
+                  <article class="card reveal">
+                     <h3>Designers</h3>
+                     <p>Testam WebP e GIF antes de publicar.</p>
+                  </article>
+                  <article class="card reveal">
+                     <h3>PPM/PNM</h3>
+                     <p>Quem trabalha com PPM/PNM e quer visualizar sem abrir um editor pesado.</p>
+                  </article>
+                  <article class="card reveal">
+                     <h3>Sequências</h3>
+                     <p>Quem organiza sequências numeradas de PNG/JPG e quer ver tudo em loop.</p>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <section class="cta-final" id="avifnim">
+            <div class="container cta-final-inner reveal">
+               <span class="eyebrow">Gostou de ver? Agora crie.</span>
+               <h2>Conheça o AVIFnim</h2>
+               <p>O <strong>AVIFnim Viewer</strong> é para visualizar. O <strong>AVIFnim</strong> é para criar:
+                  transforme sequências, vídeos e gravações de tela em <strong>AVIF animado</strong> com qualidade
+                  e arquivos pequenos.</p>
+               <div class="hero-actions">
+                  <a class="btn btn-primary btn-lg" href="index.html#comprar">Conhecer o AVIFnim →</a>
+               </div>
+            </div>
+         </section>
+
+         <section class="section" id="faq">
+            <div class="container faq-wrap">
+               <header class="section-head reveal">
+                  <span class="eyebrow">FAQ</span>
+                  <h2>Perguntas frequentes</h2>
+               </header>
+
+               <div class="faq-list reveal">
+                  <details>
+                     <summary>O AVIFnim Viewer é grátis?</summary>
+                     <p>Sim. É gratuito, open source e licenciado sob MIT. Não há versão “premium” do visualizador.</p>
+                  </details>
+                  <details>
+                     <summary>Quais formatos ele abre?</summary>
+                     <p>AVIF (still e animado), WebP (still e animado), GIF, PPM/PNM (P1–P6) e sequências numeradas
+                        de PNG/JPG. Também abre PNG e JPG individuais.</p>
+                  </details>
+                  <details>
+                     <summary>Preciso instalar?</summary>
+                     <p>No Windows você pode usar o instalador ou a versão portátil. No Linux, o <code>.deb</code>.
+                        No macOS, o <code>.dmg</code> (arraste para Applications).</p>
+                  </details>
+                  <details>
+                     <summary>Por que o macOS avisa que o desenvolvedor não pode ser verificado?</summary>
+                     <p>O app ainda não é assinado/notarizado pela Apple. Na primeira abertura: clique com o botão
+                        direito no app → <strong>Abrir</strong> → <strong>Abrir</strong>. Depois abre normalmente.</p>
+                  </details>
+                  <details>
+                     <summary>Meus arquivos são enviados para algum lugar?</summary>
+                     <p>Não. Todo o processamento é local. O app não tem telemetria nem envia imagens para servidores.</p>
+                  </details>
+                  <details>
+                     <summary>Ele toca AVIF animado no Linux?</summary>
+                     <p>Sim. Quando o WebKitGTK do sistema não suporta AVIF, o app usa um decodificador nativo em Rust
+                        como fallback.</p>
+                  </details>
+                  <details>
+                     <summary>Posso usar comercialmente?</summary>
+                     <p>Sim. A licença MIT permite uso pessoal e comercial, mantendo o aviso de licença.</p>
+                  </details>
+                  <details>
+                     <summary>Encontrei um bug. Onde reporto?</summary>
+                     <p>No GitHub: <a href="https://github.com/everctba/AVIFnim-Viewer/issues" target="_blank"
+                           rel="noopener">github.com/everctba/AVIFnim-Viewer/issues</a>.</p>
+                  </details>
+               </div>
+            </div>
+         </section>
+      </div>
+   </main>
+
+   <footer class="site-footer">
+      <div class="container footer-inner">
+         <div class="footer-brand">
+            <img src="assets/app-icon-512.png" alt="" width="24" height="24">
+            <span>AVIF<span class="accent">nim</span> Viewer</span>
+         </div>
+         <p>Visualizador gratuito e open source de imagens animadas.</p>
+         <p class="footer-tech">
+            <span class="footer-tech-label">Grátis e open source</span>
+            <span>MIT</span>
+            <span>Windows</span>
+            <span>Linux</span>
+            <span>macOS</span>
+         </p>
+         <nav aria-label="Links do rodapé">
+            <a href="https://github.com/everctba/AVIFnim-Viewer/releases/latest" target="_blank" rel="noopener">Baixar</a>
+            <a href="https://github.com/everctba/AVIFnim-Viewer" target="_blank" rel="noopener">GitHub</a>
+            <a href="index.html">Site</a>
+            <a href="https://github.com/everctba/AVIFnim-Viewer/blob/master/LICENSE" target="_blank"
+               rel="noopener">Licença MIT</a>
+            <a href="https://www.paypal.com/donate/?business=mayerdesigner@gmail.com&amp;currency_code=USD"
+               target="_blank" rel="noopener">Apoiar o desenvolvedor</a>
+         </nav>
+         <span class="copyright">© <span id="year">2026</span> AVIFnim</span>
+      </div>
+      <div class="container">
+         <p class="viewer-closing">Feito para ver suas imagens animadas como elas foram feitas para ser vistas.</p>
+      </div>
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
