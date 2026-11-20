@@ -1,0 +1,119 @@
+/* ==========================================================================
+   AVIFnim Viewer — páginas legais (privacidade e suporte)
+   Reutiliza os tokens de styles.css.
+   ========================================================================== */
+
+.legal-main {
+   max-width: 928px;
+   margin: 0 auto;
+   padding: 56px 24px 72px;
+}
+
+.legal-main h1 {
+   margin: 10px 0 14px;
+}
+
+.legal-meta {
+   margin: 0 0 8px;
+   color: var(--muted-2);
+   font-family: var(--mono);
+   font-size: 11px;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+}
+
+.legal-lead {
+   max-width: 72ch;
+   color: var(--muted);
+   line-height: 1.7;
+}
+
+.legal-main section {
+   margin-top: 38px;
+}
+
+.legal-main h2 {
+   margin-bottom: 8px;
+   font-size: 20px;
+}
+
+.legal-main h3 {
+   margin: 22px 0 6px;
+   font-size: 16px;
+}
+
+.legal-main p,
+.legal-main li {
+   color: var(--muted);
+}
+
+.legal-main p {
+   line-height: 1.7;
+}
+
+.legal-main ul {
+   padding-left: 22px;
+   line-height: 1.8;
+}
+
+.legal-main strong {
+   color: var(--text);
+}
+
+.legal-main code {
+   white-space: normal;
+   overflow-wrap: anywhere;
+}
+
+.legal-summary {
+   margin-top: 28px;
+   padding: 20px 22px;
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   background: var(--surface);
+}
+
+.legal-summary h2 {
+   margin: 0 0 6px;
+   font-size: 15px;
+}
+
+.legal-summary p {
+   margin: 0;
+   font-size: 13.5px;
+}
+
+.legal-actions {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin: 18px 0 0;
+}
+
+.legal-main .faq-list {
+   margin-top: 18px;
+}
+
+.legal-main .faq-list summary {
+   font-size: 15px;
+}
+
+.legal-main .faq-list details p {
+   line-height: 1.7;
+}
+
+.legal-note {
+   margin-top: 44px;
+   color: var(--muted-2);
+   font-size: 12px;
+}
+
+@media (max-width: 620px) {
+   .legal-main {
+      padding: 40px 18px 56px;
+   }
+
+   .legal-actions .btn {
+      width: 100%;
+   }
+}
