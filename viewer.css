@@ -123,7 +123,7 @@
    display: flex;
    flex: 4;
    aspect-ratio: 9 / 6;
-   overflow: hidden;
+   /* overflow: hidden; */
    /* height: 500px; */
    /* background-color: rgba(0, 255, 255, 0.317); */
    /* background-image: url("assets/note2.webp"); */
