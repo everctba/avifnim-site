@@ -1474,6 +1474,7 @@ details p {
 
 .footer-inner nav {
    display: flex;
+   flex-wrap: wrap;
    gap: 20px;
 }
 
