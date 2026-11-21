@@ -89,17 +89,24 @@
          </a>
 
          <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
-            <a href="index.html#recursos">Recursos</a>
-            <a href="index.html#como-funciona">Como funciona</a>
-            <a href="index.html#tecnologia">Tecnologia</a>
-            <a href="index.html#comparativo">GIF × AVIF</a>
-            <a href="index.html#comprar">Comprar</a>
-            <a href="viewer.html" class="nav-free" aria-current="page">Viewer Free</a>
+            <a href="historia.html">História dos formatos</a>
+            <div class="lang-switch" role="group" aria-label="Idioma">
+               <button type="button" class="lang-option" data-lang="en" aria-pressed="false">
+                  <span class="flag flag-us" aria-hidden="true"></span>
+                  <span class="lang-label">English</span>
+               </button>
+               <span class="lang-sep" aria-hidden="true">|</span>
+               <button type="button" class="lang-option is-active" data-lang="pt" aria-pressed="true">
+                  <span class="flag flag-br" aria-hidden="true"></span>
+                  <span class="lang-label">Português</span>
+               </button>
+            </div>
+            <a href="index.html">Voltar para a home</a>
          </nav>
 
-         <a class="btn btn-primary btn-sm header-cta" href="index.html#comprar">
+         <!-- <a class="btn btn-primary btn-sm header-cta" href="index.html#comprar">
             Comprar agora
-         </a>
+         </a> -->
 
          <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
             aria-label="Abrir menu">
@@ -131,6 +138,7 @@
                   telemetria</p>
                <span class="viewer-badge">v0.1.1 · Windows · Linux · macOS</span>
             </div>
+            <div class="container imagemHero"> </div>
          </section>
 
          <section class="section" id="plataformas">
@@ -180,7 +188,7 @@
                         </div>
                      </div>
                      <ul class="esquerdaalinha ">
-                        <li><code>.deb</code> para Ubuntu 24.04+, Linux Mint (WebKitGTK 4.1)</li>
+                        <li><code>.deb</code> para Ubuntu 24.04+, Linux Mint</li>
                         <li>Integração com o menu <strong>“Abrir com”</strong></li>
                         <li>Atalho na área de trabalho criado automaticamente na instalação</li>
                      </ul>
@@ -358,19 +366,24 @@
                   <h2>Para GIFs, WebP, AVIF e sequências do dia a dia.</h2>
                </header>
 
-               <div class="cards">
-                  <article class="card reveal">
-                     <h3>Designers</h3>
-                     <p>Testam WebP e GIF antes de publicar.</p>
-                  </article>
-                  <article class="card reveal">
-                     <h3>PPM/PNM</h3>
-                     <p>Quem trabalha com PPM/PNM e quer visualizar sem abrir um editor pesado.</p>
-                  </article>
-                  <article class="card reveal">
-                     <h3>Sequências</h3>
-                     <p>Quem organiza sequências numeradas de PNG/JPG e quer ver tudo em loop.</p>
-                  </article>
+               <div class="cards2">
+                  <div class="cards3">
+                     <article class="card reveal">
+                        <h3>Designers</h3>
+                        <p>Testam WebP e GIF antes de publicar.</p>
+                     </article>
+                     <article class="card reveal">
+                        <h3>PPM/PNM</h3>
+                        <p>Quem trabalha com PPM/PNM e quer visualizar sem abrir um editor pesado.</p>
+                     </article>
+                     <article class="card reveal">
+                        <h3>Sequências</h3>
+                        <p>Quem organiza sequências numeradas de PNG/JPG e quer ver tudo em loop.</p>
+                     </article>
+                  </div>
+                  <div class="img-note ">
+                     <div class="img-note-absolute "></div>
+                  </div>
                </div>
             </div>
          </section>
@@ -433,7 +446,8 @@
                      <summary>Encontrei um bug. Onde reporto?</summary>
                      <p>No GitHub: <a href="https://github.com/everctba/AVIFnim-Viewer/issues" target="_blank"
                            rel="noopener">github.com/everctba/AVIFnim-Viewer/issues</a> — ou pela
-                        <a href="support.html">página de suporte</a>.</p>
+                        <a href="support.html">página de suporte</a>.
+                     </p>
                   </details>
                </div>
             </div>

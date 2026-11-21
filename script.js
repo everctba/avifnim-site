@@ -62,6 +62,27 @@
    }
 
    // -------------------------------------------------------------------------
+   // Seletor de idioma (visual)
+   // -------------------------------------------------------------------------
+   const langSwitch = document.querySelector('.lang-switch');
+
+   if (langSwitch) {
+      const langOptions = Array.from(langSwitch.querySelectorAll('.lang-option'));
+
+      const setLanguage = (lang) => {
+         langOptions.forEach((button) => {
+            const active = button.dataset.lang === lang;
+            button.classList.toggle('is-active', active);
+            button.setAttribute('aria-pressed', String(active));
+         });
+      };
+
+      langOptions.forEach((button) => {
+         button.addEventListener('click', () => setLanguage(button.dataset.lang));
+      });
+   }
+
+   // -------------------------------------------------------------------------
    // Botões de copiar
    // -------------------------------------------------------------------------
    document.querySelectorAll('[data-copy]').forEach((button) => {
