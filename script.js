@@ -6,6 +6,10 @@
 
    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+   // A página é gerada em inglês (/ e /pt/): os textos dinâmicos seguem o <html lang>.
+   const isEnglish = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+   const t = (pt, en) => (isEnglish ? en : pt);
+
    // -------------------------------------------------------------------------
    // Ano do rodapé
    // -------------------------------------------------------------------------
@@ -35,7 +39,7 @@
       if (!nav || !menuToggle) return;
       nav.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menu');
+      menuToggle.setAttribute('aria-label', t('Abrir menu', 'Open menu'));
    }
 
    if (menuToggle && nav) {
@@ -43,7 +47,7 @@
          const open = !nav.classList.contains('is-open');
          nav.classList.toggle('is-open', open);
          menuToggle.setAttribute('aria-expanded', String(open));
-         menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+         menuToggle.setAttribute('aria-label', open ? t('Fechar menu', 'Close menu') : t('Abrir menu', 'Open menu'));
       });
 
       nav.querySelectorAll('a').forEach((link) => {
@@ -94,7 +98,7 @@
          const original = button.textContent;
 
          const done = (ok) => {
-            button.textContent = ok ? 'Copiado' : 'Falhou';
+            button.textContent = ok ? t('Copiado', 'Copied') : t('Falhou', 'Failed');
             button.classList.toggle('is-copied', ok);
             window.setTimeout(() => {
                button.textContent = original;

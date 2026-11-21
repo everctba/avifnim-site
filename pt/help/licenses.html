@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<script>
+   (function () {
+      try {
+         var theme = new URLSearchParams(window.location.search).get('theme');
+         if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      } catch (error) {}
+   })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVIFnim — Licenças de terceiros</title>
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<header class="top">
+   <div class="top-inner">
+      <a class="brand" href="index.html">AVIF<span>nim</span></a>
+      <span class="badge">Licenças</span>
+      <span style="flex:1"></span>
+      <a class="lang-link" href="../../help/licenses.html" hreflang="en">English</a>
+      <div class="window-controls">
+         <button type="button" class="window-btn" data-window="min" title="Minimizar" aria-label="Minimizar">−</button>
+         <button type="button" class="window-btn" data-window="max" title="Maximizar" aria-label="Maximizar">□</button>
+         <button type="button" class="window-btn window-btn-close" data-window="close" title="Fechar" aria-label="Fechar">×</button>
+      </div>
+   </div>
+</header>
+
+<main style="max-width: 900px; margin: 0 auto; padding: 32px 24px 64px;">
+   <a class="lang-link" href="index.html">← Voltar ao guia</a>
+
+   <h1 style="margin-top: 18px;">Licenças de terceiros</h1>
+   <p class="lead">
+      O AVIFnim usa componentes de terceiros. Cada um mantém a própria licença, e
+      <strong>nada no contrato do AVIFnim restringe os direitos que você tem sobre esses componentes</strong>.
+   </p>
+
+   <section>
+      <h2>FFmpeg — GPL</h2>
+      <p>
+         O AVIFnim <strong>executa o FFmpeg como programa separado</strong> (processo filho, via linha de
+         comando), sem linkar as bibliotecas do FFmpeg ao aplicativo. O binário distribuído é GPL e o
+         código-fonte correspondente está disponível nas fontes abaixo.
+      </p>
+      <ul>
+         <li>
+            <strong>Windows:</strong> FFmpeg 7.1 (build “essentials” do gyan.dev) —
+            fonte em <a href="https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz" target="_blank" rel="noopener">ffmpeg-7.1.tar.xz</a>
+            e scripts de build em <a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener">gyan.dev/ffmpeg/builds</a>.
+         </li>
+         <li>
+            <strong>Linux:</strong> FFmpeg n8.1 (build GPL do BtbN/FFmpeg-Builds) —
+            fontes em <a href="https://github.com/BtbN/FFmpeg-Builds" target="_blank" rel="noopener">github.com/BtbN/FFmpeg-Builds</a>
+            e <a href="https://github.com/FFmpeg/FFmpeg/tree/n8.1" target="_blank" rel="noopener">FFmpeg n8.1</a>.
+         </li>
+         <li>
+            <strong>macOS:</strong> FFmpeg 6.1.1 (eugeneware/ffmpeg-static, tag b6.1.1) —
+            fontes em <a href="https://github.com/eugeneware/ffmpeg-static" target="_blank" rel="noopener">github.com/eugeneware/ffmpeg-static</a>
+            e <a href="https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz" target="_blank" rel="noopener">ffmpeg-6.1.1.tar.xz</a>.
+         </li>
+      </ul>
+      <p>
+         A configuração exata do build está impressa em <code>ffmpeg -version</code> (também disponível no
+         aplicativo em Ajuda → CLI) e nos scripts do provedor de cada plataforma.
+      </p>
+      <p>
+         <strong>Oferta escrita (GPLv3):</strong> durante <strong>3 anos</strong> a partir do recebimento do
+         software, o código-fonte correspondente pode ser solicitado em
+         <a href="mailto:mayerdesigner@gmail.com">mayerdesigner@gmail.com</a>.
+      </p>
+      <p>
+         Texto completo da licença:
+         <a href="licenses/gpl-3.0.txt">GNU General Public License v3</a>.
+      </p>
+   </section>
+
+   <section>
+      <h2>libavif / avifenc — BSD-2-Clause</h2>
+      <p>Copyright 2019 Joe Drago. Todos os direitos reservados.</p>
+      <pre>Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+      <p>Fonte: <a href="https://github.com/AOMediaCodec/libavif" target="_blank" rel="noopener">github.com/AOMediaCodec/libavif</a>.</p>
+   </section>
+
+   <section>
+      <h2>Electron — MIT</h2>
+      <p>Copyright (c) Electron contributors. Copyright (c) 2013-2020 GitHub Inc.</p>
+      <pre>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
+      <p>
+         O Electron inclui o Chromium e outros componentes sob BSD-3-Clause e licenças
+         semelhantes; os avisos completos acompanham o pacote do Electron em
+         <code>node_modules/electron/dist/LICENSE</code>.
+      </p>
+   </section>
+
+   <section>
+      <h2>Fontes</h2>
+      <ul>
+         <li><strong>Inter</strong> — SIL Open Font License 1.1</li>
+         <li><strong>Space Grotesk</strong> — SIL Open Font License 1.1</li>
+         <li><strong>Material Icons</strong> — Apache License 2.0</li>
+      </ul>
+      <p>As fontes são carregadas do Google Fonts; os avisos se aplicam caso sejam embarcadas no aplicativo.</p>
+   </section>
+
+   <section>
+      <h2>Pacotes npm</h2>
+      <p>
+         O aplicativo usa pacotes npm sob licenças MIT, BSD e Apache 2.0 (por exemplo Electron,
+         axios e dependências transitivas). Os textos dessas licenças estão nos respectivos pacotes
+         em <code>node_modules</code>.
+      </p>
+   </section>
+
+   <p style="margin-top: 40px; color: var(--muted); font-size: 12px;">
+      Última atualização: 13/11/2026.
+   </p>
+</main>
+
+<script src="help.js"></script>
+</body>
+</html>

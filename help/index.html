@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script>
+   // Tema vem do app (?theme=light|dark); fora do app fica no escuro
+   (function () {
+      try {
+         var theme = new URLSearchParams(window.location.search).get('theme');
+         if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      } catch (error) {}
+   })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVIFnim — User guide (Desktop, CLI and MCP)</title>
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<header class="top">
+   <div class="top-inner">
+      <div class="brand">AVIF<span>nim</span></div>
+      <span class="badge">User guide</span>
+      <span style="flex:1"></span>
+      <a class="lang-link" href="../pt/help/index.html" hreflang="pt-BR">Português</a>
+      <span class="badge" id="version-label">Desktop · CLI · MCP</span>
+      <div class="window-controls">
+         <button type="button" class="window-btn" data-window="min" title="Minimize" aria-label="Minimize">−</button>
+         <button type="button" class="window-btn" data-window="max" title="Maximize" aria-label="Maximize">□</button>
+         <button type="button" class="window-btn window-btn-close" data-window="close" title="Close" aria-label="Close">×</button>
+      </div>
+   </div>
+</header>
+
+<div class="layout">
+   <nav class="side" id="nav">
+      <a href="#instalacao">1. Installation</a>
+      <a href="#linux">1.1 Linux (deb / AppImage)</a>
+      <a href="#macos">1.2 macOS (.pkg)</a>
+      <a href="#desktop">2. Desktop app</a>
+      <a href="#cli">3. CLI (avifnim)</a>
+      <a href="#mcp">4. MCP for AI agents</a>
+      <a href="#problemas">5. Troubleshooting</a>
+      <a href="#faq">7. FAQ</a>
+   </nav>
+
+   <main>
+      <section id="instalacao">
+         <h1>AVIFnim user guide</h1>
+         <p class="lead">
+            AVIFnim converts <strong>image sequences</strong> and <strong>videos</strong> into
+            <strong>animated AVIF</strong> (and also animated WebP/GIF). It ships in three forms that
+            share the same conversion engine:
+         </p>
+
+         <div class="grid-2">
+            <div class="card">
+               <h3 style="margin-top:0">Desktop</h3>
+               <p style="margin:0;font-size:13.5px">Window with a UI: drag images, trim video, record the screen and export.</p>
+            </div>
+            <div class="card">
+               <h3 style="margin-top:0">CLI + MCP</h3>
+               <p style="margin:0;font-size:13.5px">The <code>avifnim</code> command on your PATH and an MCP server for Claude, OpenCode, Cursor and other agents.</p>
+            </div>
+         </div>
+
+         <h2 id="instalacao-componentes">Choosing components in the installer</h2>
+         <p>The installer shows a screen with two independent options:</p>
+
+         <table>
+            <thead>
+               <tr><th>Option</th><th>What it installs</th><th>Needs admin?</th></tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><strong>Desktop app</strong></td>
+                  <td>GUI + Start Menu and Desktop shortcuts</td>
+                  <td>No</td>
+               </tr>
+               <tr>
+                  <td><strong>CLI + MCP</strong></td>
+                  <td>
+                     The <code>avifnim</code> command on the user PATH, installed in
+                     <code>&lt;install folder&gt;\resources\cli</code> (next to the app)
+                  </td>
+                  <td>No</td>
+               </tr>
+            </tbody>
+         </table>
+
+         <p>You can select both (recommended), the desktop only, or the CLI/MCP only.</p>
+
+         <div class="note">
+            <strong>PATH:</strong> the installer adds <code>&lt;install folder&gt;\resources\cli</code>
+            to the <em>user</em> PATH (registry <code>HKCU\Environment</code>) — in other words, the CLI
+            lives in the same folder you chose to install the app. Terminals that are already open do not
+            see the change: <strong>close and reopen the terminal</strong> after installing.
+         </div>
+
+         <h3>Checking the installation</h3>
+         <pre><code>avifnim version
+avifnim doctor</code><button class="copy" type="button">Copy</button></pre>
+
+         <p><code>doctor</code> shows the paths to <code>ffmpeg.exe</code> and <code>avifenc.exe</code>,
+            the supported GPUs and whether the command is on the PATH.</p>
+      </section>
+
+      <section id="linux">
+         <h2>1.1 Linux — deb and AppImage</h2>
+         <p class="lead">
+            Linux has no <code>Setup.exe</code>: there are two formats with different trade-offs.
+         </p>
+
+         <h3>.deb — full version (Desktop + CLI + MCP)</h3>
+         <p>
+            Installs to <code>/opt/AVIFnim</code>, creates the menu entry
+            (<code>.desktop</code>) and puts the <code>avifnim</code> command on the PATH through
+            <code>/usr/bin/avifnim</code>.
+         </p>
+         <pre><code>sudo apt install ./avifnim_1.0.0_amd64.deb
+
+# check
+avifnim doctor
+avifnim init
+
+# uninstall (removes files, menu entry and the avifnim command)
+sudo apt remove avifnim</code><button class="copy" type="button">Copy</button></pre>
+         <p>Works on Ubuntu, Debian, Mint, Pop!_OS and derivatives (<code>.deb</code> installers).</p>
+
+         <h3>AppImage — Desktop only</h3>
+         <p>
+            A single executable file, no installation and no PATH changes. In this build the AppImage
+            <strong>does not include the CLI/MCP</strong> — it is the GUI only.
+         </p>
+         <pre><code>chmod +x AVIFnim-1.0.0-x86_64.AppImage
+./AVIFnim-1.0.0-x86_64.AppImage</code><button class="copy" type="button">Copy</button></pre>
+         <p>
+            To add it to the menu, use <a href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a>
+            or create a <code>.desktop</code> file yourself. If you want the <code>avifnim</code> command, use the .deb.
+         </p>
+
+         <div class="note warn">
+            <strong>Important difference:</strong> on Windows the installer asks where to install and edits
+            the user PATH. On Linux the package manager does the installing: the <code>.deb</code> goes to
+            <code>/opt</code> and uses <code>/usr/bin</code> (already on the PATH); the AppImage stays
+            wherever you put it and registers nothing.
+         </div>
+
+         <h3>Building from source (Linux)</h3>
+         <p>
+            The Linux build must run on Linux (or WSL/container), because electron-builder uses native
+            tools (fpm/dpkg). First, put the Linux binaries in
+            <code>src/main/utils/ffmpeg-bin/ffmpeg</code> and
+            <code>src/main/utils/avifenc-bin/avifenc</code>.
+         </p>
+         <pre><code>npm run build:linux:deb        # full .deb (Desktop + CLI + MCP)
+npm run build:linux:appimage   # AppImage (Desktop only)</code><button class="copy" type="button">Copy</button></pre>
+      </section>
+
+      <section id="macos">
+         <h2>1.2 macOS — .pkg installer</h2>
+         <p class="lead">
+            Two installers: <strong>Apple Silicon</strong> (arm64) and <strong>Intel</strong> (x64).
+            The .pkg installs the app and the CLI/MCP at once.
+         </p>
+
+         <h3>Installation</h3>
+         <p>The installer places:</p>
+         <ul>
+            <li><code>/Applications/AVIFnim.app</code></li>
+            <li><code>/usr/local/bin/avifnim</code> (CLI + MCP, already on the default PATH)</li>
+         </ul>
+         <p>Open the <code>.pkg</code> and follow the installer. If macOS blocks it because it is unsigned:</p>
+         <ul>
+            <li>right-click the <code>.pkg</code> → <strong>Open</strong>; or</li>
+            <li>run in Terminal:</li>
+         </ul>
+         <pre><code>sudo installer -pkg AVIFnim-1.0.0-arm64.pkg -target /</code><button class="copy" type="button">Copy</button></pre>
+
+         <h3>CLI + MCP</h3>
+         <p>After installing, the command is already on the PATH:</p>
+         <pre><code>avifnim doctor
+avifnim init
+avifnim mcp</code><button class="copy" type="button">Copy</button></pre>
+         <p>
+            If you installed via DMG/drag-and-drop, open <strong>About → CLI + MCP</strong> and click
+            <strong>Install on PATH</strong>.
+         </p>
+
+         <h3>Remove</h3>
+         <pre><code>sudo rm -f /usr/local/bin/avifnim</code><button class="copy" type="button">Copy</button></pre>
+         <p>Then drag AVIFnim from <strong>Applications</strong> to the Trash.</p>
+
+         <p>
+            <strong>Intel Macs on Catalina 10.15.7:</strong> there is a separate
+            <code>AVIFnim-1.0.0-x64-catalina.pkg</code> package, using Electron 32 (unsupported).
+         </p>
+
+         <div class="note warn">
+            <strong>Signing:</strong> the test build uses an ad-hoc app signature and an unsigned .pkg.
+            To distribute without the Gatekeeper warning, you need Developer ID Application + Developer ID
+            Installer + notarization (Apple Developer Program).
+         </div>
+      </section>
+
+      <section id="desktop">
+         <h2>2. Desktop app</h2>
+
+         <h3>Sequence to AVIF</h3>
+         <p>
+            Drag the images (PNG, JPG, WebP, GIF) or click <strong>Select files</strong>.
+            When you pick a numbered frame (<code>frame_0001.png</code>), the app automatically detects the
+            whole sequence in the same directory (same prefix, suffix and extension).
+         </p>
+
+         <h3>Video to AVIF</h3>
+         <p>
+            Load a video, set the range (start/end), the crop, the FPS and the scale. The preview uses a
+            cached MP4 proxy — the final file is still animated AVIF.
+         </p>
+         <p>
+            You can also <strong>open an existing animated AVIF</strong> (Select video → <code>.avif</code>):
+            the app extracts frames to the installation cache, applies trim/crop/scale and re-encodes while
+            keeping transparency. Re-encoding is <strong>lossy → lossy</strong> (generation loss), so the app
+            warns you the first time, with a <em>“Don't show this again”</em> option. For the best quality,
+            always export again from the original material (PNG or video).
+         </p>
+
+         <h3>Record screen</h3>
+         <p>
+            Records the screen or a window and sends the result straight into the conversion flow.
+         </p>
+
+         <h3>Quality, speed and GPU</h3>
+         <table>
+            <thead>
+               <tr><th>Quality</th><th>CRF (AVIF)</th><th>When to use</th></tr>
+            </thead>
+            <tbody>
+               <tr><td><code>máximo</code> (topo)</td><td>15</td><td>Maximum quality, larger file</td></tr>
+               <tr><td><code>levisio</code></td><td>20</td><td>Site hero, showcase</td></tr>
+               <tr><td><code>leve</code></td><td>25</td><td>Balance for the web</td></tr>
+               <tr><td><code>original</code></td><td>30</td><td>Default</td></tr>
+               <tr><td><code>medio</code></td><td>35</td><td>Background animations</td></tr>
+               <tr><td><code>qualidadeok</code></td><td>45</td><td>Smallest file, previews</td></tr>
+            </tbody>
+         </table>
+
+         <p>
+            With a compatible GPU the AVIF uses NVENC (NVIDIA), AMF (AMD) or QuickSync (Intel); if the
+            encoder fails, the app automatically falls back to CPU (<code>libaom-av1</code>).
+         </p>
+
+         <h3>Transparency</h3>
+         <p>
+            PNG/WebP with an alpha channel use <code>avifenc</code> to build the AVIF alpha item.
+            This path is limited to <strong>2000 frames</strong> per conversion.
+         </p>
+
+         <h3>Help inside the app</h3>
+         <p>
+            Menu <strong>Help → User guide</strong> (or <kbd>F1</kbd>) opens this page.
+            <strong>Help → About</strong> shows the version and project links.
+         </p>
+      </section>
+
+      <section id="cli">
+         <h2>3. CLI — the <code>avifnim</code> command</h2>
+         <p class="lead">The CLI runs without opening a window and uses the same presets, encoders and binaries as the app.</p>
+
+         <h3>Commands</h3>
+         <table>
+            <thead>
+               <tr><th>Command</th><th>What it does</th></tr>
+            </thead>
+            <tbody>
+               <tr><td><code>avifnim convert &lt;input&gt;</code></td><td>Converts a video, an image folder or a starting frame</td></tr>
+               <tr><td><code>avifnim detect &lt;input&gt;</code></td><td>Inspects type, frames, gaps, dimensions and transparency</td></tr>
+               <tr><td><code>avifnim doctor</code></td><td>Binaries, preferred GPU and PATH status</td></tr>
+               <tr><td><code>avifnim init</code></td><td>Prints the MCP config + rules for AGENTS.md / CLAUDE.md / rules.md</td></tr>
+               <tr><td><code>avifnim mcp</code></td><td>Starts the MCP server over stdio</td></tr>
+               <tr><td><code>avifnim help --web</code></td><td>Opens this guide in the browser</td></tr>
+            </tbody>
+         </table>
+
+         <h3><code>convert</code> options</h3>
+         <table>
+            <thead>
+               <tr><th>Option</th><th>Values</th><th>Default</th></tr>
+            </thead>
+            <tbody>
+               <tr><td><code>--out</code></td><td>output file</td><td>next to the input</td></tr>
+               <tr><td><code>--format</code></td><td><code>avif</code> · <code>webp</code> · <code>gif</code></td><td>avif</td></tr>
+               <tr><td><code>--fps</code></td><td>1 to 60</td><td>the source video FPS (sequence: 30)</td></tr>
+               <tr><td><code>--quality</code></td><td>máximo (topo) · levisio · leve · medio · qualidadeok · original · CRF 0-63</td><td>original</td></tr>
+               <tr><td><code>--speed</code></td><td><code>rapido</code> · <code>equilibrado</code> · <code>qualidade</code></td><td>rapido</td></tr>
+               <tr><td><code>--scale</code></td><td>1 · 0.5 · 0.25 · 75% (factor or percentage)</td><td>1</td></tr>
+               <tr><td><code>--encoder</code></td><td><code>auto</code> · <code>cpu</code> · <code>gpu</code></td><td>auto</td></tr>
+               <tr><td><code>--start</code> / <code>--end</code></td><td>seconds (video or animated AVIF)</td><td>start/end of the video</td></tr>
+               <tr><td><code>--crop</code></td><td><code>width:height:x:y</code> (video or animated AVIF)</td><td>no crop</td></tr>
+               <tr><td><code>--no-loop</code></td><td>turns off the infinite loop (plays once)</td><td>loop on</td></tr>
+               <tr><td><code>--loop=&lt;n&gt;</code></td><td>repeats: <code>0</code> = infinite, <code>1</code> = once, <code>3</code> = three times</td><td><code>0</code></td></tr>
+               <tr><td><code>--force</code></td><td>allows overwriting the output</td><td>never overwrites</td></tr>
+               <tr><td><code>--json</code></td><td>JSON output for scripts/agents</td><td>text</td></tr>
+            </tbody>
+         </table>
+
+         <h3>Examples</h3>
+         <pre><code># PNG sequence (folder)
+avifnim convert "C:\project\render" --out "C:\project\public\img\hero.avif" --fps 24
+
+# From any frame (numbering is detected automatically)
+avifnim convert "C:\project\render\frame_0001.png" --out "C:\project\img\hero.avif"
+
+# Video with trim, crop and 50% size
+avifnim convert "C:\videos\loop.mp4" --out "C:\site\img\loop.avif" \
+  --start 2 --end 5 --fps 24 --scale 0.5
+
+# Recompress an animated AVIF (lossy -> lossy: prefer the original material)
+avifnim convert "C:\site\img\hero.avif" --out "C:\site\img\hero-min.avif" \
+  --scale 0.75 --quality medio
+
+# Animated GIF (useful for previews)
+avifnim convert "C:\project\render" --format gif --out "C:\project\preview.gif"
+
+# Inspect before converting
+avifnim detect "C:\project\render" --json</code><button class="copy" type="button">Copy</button></pre>
+
+         <h3>JSON output</h3>
+         <pre><code>{
+  "ok": true,
+  "input": "C:\\project\\render",
+  "output": "C:\\project\\public\\img\\hero.avif",
+  "kind": "sequence",
+  "format": "avif",
+  "frames": 120,
+  "gaps": 0,
+  "fps": 24,
+  "width": 1080,
+  "height": 1920,
+  "bytes": 842321,
+  "encoder": "nvenc",
+  "encoderLabel": "NVIDIA NVENC",
+  "durationMs": 5230
+}</code><button class="copy" type="button">Copy</button></pre>
+
+         <h3>Exit codes</h3>
+         <table>
+            <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+            <tbody>
+               <tr><td><code>0</code></td><td>Conversion finished</td></tr>
+               <tr><td><code>2</code></td><td>Invalid usage or missing input</td></tr>
+               <tr><td><code>3</code></td><td>No frames found</td></tr>
+               <tr><td><code>4</code></td><td>Conversion failed (ffmpeg/avifenc)</td></tr>
+            </tbody>
+         </table>
+
+         <div class="note warn">
+            Paths with spaces need quotes. We never overwrite files by default: if the output exists,
+            <code>name-2.avif</code>, <code>name-3.avif</code>… is created.
+         </div>
+      </section>
+
+      <section id="mcp">
+         <h2>4. MCP — server for AI agents</h2>
+         <p class="lead">
+            MCP (Model Context Protocol) lets an agent call the conversion as a tool, without you typing
+            commands. The server speaks JSON-RPC over stdio: no ports, no network.
+         </p>
+
+         <h3>1) Register the server</h3>
+         <p>In your project root, create <code>.mcp.json</code> (Claude Code, Cursor, Windsurf, Codex):</p>
+         <pre><code>{
+  "mcpServers": {
+    "avifnim": {
+      "command": "avifnim",
+      "args": ["mcp"]
+    }
+  }
+}</code><button class="copy" type="button">Copy</button></pre>
+
+         <p>In Claude Desktop, the same block goes in
+            <code>%APPDATA%\Claude\claude_desktop_config.json</code> (Windows) or
+            <code>~/.config/Claude/claude_desktop_config.json</code> (Linux).</p>
+
+         <p>In OpenCode (<code>opencode.json</code> or <code>opencode.jsonc</code>):</p>
+         <pre><code>{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "avifnim": {
+      "type": "local",
+      "command": ["avifnim", "mcp"],
+      "enabled": true
+    }
+  }
+}</code><button class="copy" type="button">Copy</button></pre>
+
+         <div class="note">
+            If the client cannot find <code>avifnim</code>, use the absolute path to the executable
+            (<code>avifnim doctor</code> shows it) or run <code>avifnim init</code>, which prints the config
+            with the resolved path.
+         </div>
+
+         <h3>2) Instructions for the agent</h3>
+         <p>
+            Run <code>avifnim init</code> with your project paths. It prints a block ready to paste into
+            <code>AGENTS.md</code>, <code>CLAUDE.md</code> or <code>rules.md</code>:
+         </p>
+
+         <pre><code>avifnim init --input "C:\project\render" --output "C:\project\public\img\hero.avif" --type sequence
+
+# or write it straight into AGENTS.md (and CLAUDE.md, if it exists)
+avifnim init --write --input "C:\project\render" --type sequence
+
+# video with specific fps and quality
+avifnim init --input "C:\videos\loop.mp4" --type video --fps 24 --quality levisio</code><button class="copy" type="button">Copy</button></pre>
+
+         <p>The generated block contains:</p>
+         <ul>
+            <li>the input <strong>type</strong> (image sequence or video);</li>
+            <li>the <strong>input path</strong> the agent should use;</li>
+            <li>the default <strong>output path</strong>;</li>
+            <li>recommended FPS, quality, speed and scale;</li>
+            <li>the rules (<em>never overwrite</em>, inspect first, report the final path).</li>
+         </ul>
+
+         <div class="note">
+            The block sits between <code>&lt;!-- AVIFNIM-MCP:START --&gt;</code> and
+            <code>&lt;!-- AVIFNIM-MCP:END --&gt;</code>. Running <code>--write</code> again updates the block
+            without duplicating it (run it as many times as you want).
+         </div>
+
+         <div class="note">
+            <strong>FPS:</strong> if you do not pass <code>fps</code>, the video keeps its source FPS
+            (capped at 60) and image sequences use 30. Pass <code>fps</code> to lower it
+            (e.g. 24) and reduce the file size.
+         </div>
+
+         <h3>3) Exposed tools</h3>
+         <table>
+            <thead><tr><th>Tool</th><th>Main parameters</th><th>Returns</th></tr></thead>
+            <tbody>
+               <tr>
+                  <td><code>avif_inspect_sequence</code></td>
+                  <td><code>inputPath</code>, <code>type</code></td>
+                  <td>type, frames, gaps, dimensions, alpha, duration</td>
+               </tr>
+               <tr>
+                  <td><code>avif_from_sequence</code></td>
+                  <td><code>inputPath</code>, <code>outputPath</code>, <code>fps</code>, <code>quality</code>, <code>speed</code>, <code>scale</code>, <code>format</code>, <code>loop</code>, <code>loopCount</code>, <code>encoder</code></td>
+                  <td>final path + metadata</td>
+               </tr>
+               <tr>
+                  <td><code>avif_from_video</code></td>
+                  <td>the same + <code>start</code>, <code>end</code>, <code>crop</code></td>
+                  <td>final path + metadata</td>
+               </tr>
+               <tr>
+                  <td><code>avif_capabilities</code></td>
+                  <td>—</td>
+                  <td>ffmpeg/avifenc, GPUs, preferred encoder</td>
+               </tr>
+               <tr>
+                  <td><code>avif_suggest_output</code></td>
+                  <td><code>inputPath</code>, <code>projectRoot</code>, <code>format</code></td>
+                  <td>a free path inside the project</td>
+               </tr>
+            </tbody>
+         </table>
+
+         <h3>4) Example conversation</h3>
+         <div class="card">
+            <p style="margin-top:0"><strong>You:</strong> "Convert the video <code>video.mp4</code> into an
+               animated AVIF for the site hero."</p>
+            <p style="margin-bottom:0"><strong>Agent:</strong> calls <code>avif_from_video</code> (with
+               <code>inputPath</code> = the video) and answers:
+               <em>"Done: <code>public/img/hero.avif</code>, 90 frames, 1920×1080, 1.2 MB."</em></p>
+         </div>
+
+         <div class="note warn">
+            <strong>Do not extract a frame from the video.</strong> If the agent grabs an image
+            (<code>ffmpeg -ss 1.2 -i video.mp4 frame.png</code>) and calls
+            <code>avif_from_sequence</code>, the AVIF will have <strong>a single frame</strong> and stay
+            frozen. For video, always use <code>avif_from_video</code> with the video path.
+            The sequence tool rejects a single image by default (it only accepts it with
+            <code>allowSingleFrame: true</code>).
+         </div>
+
+         <h3>Testing the server without AI</h3>
+         <pre><code># The server reads JSON-RPC per line on stdin and replies on stdout
+echo {"jsonrpc":"2.0","id":1,"method":"tools/list"} | avifnim mcp</code><button class="copy" type="button">Copy</button></pre>
+      </section>
+
+      <section id="problemas">
+         <h2>5. Troubleshooting</h2>
+
+         <h3><code>avifnim</code> is not recognized</h3>
+         <ul>
+            <li>Close and reopen the terminal (the PATH is only read when it starts).</li>
+            <li>Check that <code>&lt;install folder&gt;\resources\cli\avifnim.exe</code> exists.</li>
+            <li>Run <code>avifnim doctor</code>; if the PATH is wrong, reinstall with "CLI + MCP" checked.</li>
+         </ul>
+
+         <h3>ffmpeg / avifenc not found</h3>
+         <p>
+            Run <code>avifnim doctor</code>. If they are missing, the installation is incomplete: reinstall.
+            To use your own binaries, set <code>AVIFNIM_FFMPEG</code> and/or <code>AVIFNIM_AVIFENC</code>.
+         </p>
+
+         <h3>GPU not used</h3>
+         <p>
+            AVIFnim tests the hardware encoder before using it. If it fails, it falls back to CPU
+            automatically. Force it with <code>--encoder cpu</code> (or <code>gpu</code> to require a GPU
+            in MCP clients).
+         </p>
+         <p>
+            On Linux, FFmpeg must be built with NVENC (<code>--enable-nvenc</code> /
+            <code>--enable-ffnvcodec</code>). The official installer already includes it; if you replace
+            the binary, use a build with <code>av1_nvenc</code> (for example, BtbN/FFmpeg-Builds GPL).
+         </p>
+         <p>
+            GPU is faster. <strong>GPU: smaller file</strong> is enabled by default and uses periodic
+            keyframes, producing much smaller files. Uncheck it for maximum compatibility (every frame as a
+            keyframe), or use the <strong>CPU</strong> engine for the final render — CPU produces the smallest
+            files, at the cost of time.
+         </p>
+
+         <h3>The AVIF came out frozen (only the first frame)</h3>
+         <p>
+            It is almost always because the agent extracted <strong>one frame</strong> from the video and
+            converted it as a sequence. Convert the video directly with <code>avif_from_video</code> (MCP)
+            or <code>avifnim convert "video.mp4" --out "out.avif"</code> (CLI). If you really want a static
+            AVIF of a single image, use <code>allowSingleFrame: true</code> in MCP.
+         </p>
+
+         <h3>The AVIF is heavy or "stuttering" during playback</h3>
+         <p>
+            Animated AVIF is **all-intra**: every frame is a complete AV1 frame, with no inter-frame
+            prediction. Above <strong>1920 px</strong> on the longest side, the browser decoder may not keep
+            up with the FPS and the player drops frames (stutter) — and the file becomes larger than the
+            original video. The CLI/MCP warns when this happens.
+         </p>
+         <p>
+            Fix: <code>--max-width 1920</code> (or 1280 for a hero), <code>--fps 30</code> or lower and,
+            if needed, <code>medio</code>/<code>qualidadeok</code> quality.
+         </p>
+
+         <h3>Transparency in a long sequence</h3>
+         <p>The alpha path through <code>avifenc</code> accepts up to 2000 frames. Above that, shorten the
+            sequence, use <code>--scale 0.5</code> to reduce the cost, or convert it in parts.</p>
+
+         <h3>The output was not overwritten</h3>
+         <p>That is intentional. Use <code>--force</code> to overwrite or delete the file first.</p>
+
+         <h3>The MCP client does not start the server</h3>
+         <ul>
+            <li>Use the absolute path to the executable in <code>command</code>.</li>
+            <li>Make sure <code>avifnim mcp</code> works on its own in the terminal (it just sits there waiting for JSON, that is normal).</li>
+            <li>Restart the client after editing the config JSON.</li>
+         </ul>
+
+         <h3>Spaces and accents in paths</h3>
+         <p>Always quote paths in the CLI. The installer and the CLI support accents
+            (UTF-8), but older third-party tools may not.</p>
+      </section>
+
+      <section id="faq">
+         <h2>7. FAQ</h2>
+
+         <h3>Do I need the desktop app to use the CLI?</h3>
+         <p>No. The CLI/MCP uses the bundled binaries and runs headless. But the installer always copies the
+            app files (it is a single package); without the desktop component you simply do not get shortcuts.</p>
+
+         <h3>What happens if I uninstall?</h3>
+         <p>The uninstaller removes the shortcuts, the user PATH entry and the
+            <code>resources\cli</code> folder (if it still exists).</p>
+
+         <h3>Can I use it in CI/CD?</h3>
+         <p>Yes: <code>avifnim convert ... --json</code> returns JSON and stable exit codes.</p>
+
+         <h3>Where are the presets?</h3>
+         <p>Same as the app: <code>máximo</code> (accepts <code>topo</code>/<code>max</code>), <code>levisio</code>, <code>leve</code>, <code>medio</code>,
+            <code>qualidadeok</code>, <code>original</code>, plus a numeric CRF (0–63) in the CLI.</p>
+      </section>
+
+      <footer>
+         AVIFnim — convert image sequences and videos to animated AVIF.
+         <span id="footer-version"></span>
+         · <a href="eula.html">EULA</a> · <a href="licenses.html">Third-party licenses</a>
+      </footer>
+   </main>
+</div>
+
+<script src="help.js"></script>
+</body>
+</html>

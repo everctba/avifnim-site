@@ -254,6 +254,7 @@ code {
 
 .lang-option {
    display: inline-flex;
+   text-decoration: none;
    align-items: center;
    gap: 6px;
    border: 0;
