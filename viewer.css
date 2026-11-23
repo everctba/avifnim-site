@@ -314,6 +314,19 @@
 }
 
 
+.platform-alt {
+   margin-top: -8px;
+   font-size: 12px;
+   color: var(--muted);
+   text-align: center;
+   text-decoration: underline;
+   text-underline-offset: 3px;
+}
+
+.platform-alt:hover {
+   color: var(--text);
+}
+
 .platform-card ul {
    list-style: none;
    padding: 0;
