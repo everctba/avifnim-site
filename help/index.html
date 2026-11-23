@@ -119,7 +119,7 @@ avifnim doctor</code><button class="copy" type="button">Copy</button></pre>
             (<code>.desktop</code>) and puts the <code>avifnim</code> command on the PATH through
             <code>/usr/bin/avifnim</code>.
          </p>
-         <pre><code>sudo apt install ./avifnim_1.0.0_amd64.deb
+         <pre><code>sudo apt install ./avifnim_1.1.0_amd64.deb
 
 # check
 avifnim doctor
@@ -134,8 +134,8 @@ sudo apt remove avifnim</code><button class="copy" type="button">Copy</button></
             A single executable file, no installation and no PATH changes. In this build the AppImage
             <strong>does not include the CLI/MCP</strong> — it is the GUI only.
          </p>
-         <pre><code>chmod +x AVIFnim-1.0.0-x86_64.AppImage
-./AVIFnim-1.0.0-x86_64.AppImage</code><button class="copy" type="button">Copy</button></pre>
+         <pre><code>chmod +x AVIFnim-1.1.0-x86_64.AppImage
+./AVIFnim-1.1.0-x86_64.AppImage</code><button class="copy" type="button">Copy</button></pre>
          <p>
             To add it to the menu, use <a href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a>
             or create a <code>.desktop</code> file yourself. If you want the <code>avifnim</code> command, use the .deb.
@@ -177,7 +177,7 @@ npm run build:linux:appimage   # AppImage (Desktop only)</code><button class="co
             <li>right-click the <code>.pkg</code> → <strong>Open</strong>; or</li>
             <li>run in Terminal:</li>
          </ul>
-         <pre><code>sudo installer -pkg AVIFnim-1.0.0-arm64.pkg -target /</code><button class="copy" type="button">Copy</button></pre>
+         <pre><code>sudo installer -pkg AVIFnim-1.1.0-arm64.pkg -target /</code><button class="copy" type="button">Copy</button></pre>
 
          <h3>CLI + MCP</h3>
          <p>After installing, the command is already on the PATH:</p>
@@ -195,7 +195,7 @@ avifnim mcp</code><button class="copy" type="button">Copy</button></pre>
 
          <p>
             <strong>Intel Macs on Catalina 10.15.7:</strong> there is a separate
-            <code>AVIFnim-1.0.0-x64-catalina.pkg</code> package, using Electron 32 (unsupported).
+            <code>AVIFnim-1.1.0-x64-catalina.pkg</code> package, using Electron 32 (unsupported).
          </p>
 
          <div class="note warn">
@@ -231,6 +231,13 @@ avifnim mcp</code><button class="copy" type="button">Copy</button></pre>
          <h3>Record screen</h3>
          <p>
             Records the screen or a window and sends the result straight into the conversion flow.
+         </p>
+         <p>
+            When recording the <strong>entire screen</strong> with <strong>Camera follows the mouse</strong>,
+            the framing already shows in the player: the preview displays the cropped area following the
+            cursor <strong>before converting</strong>. The camera zoom (1.3×, 1.5×, 2× and 2.5×) updates the
+            preview instantly; unchecking the option returns to manual crop. The camera does not apply to
+            window recordings — full screen only.
          </p>
 
          <h3>Quality, speed and GPU</h3>
